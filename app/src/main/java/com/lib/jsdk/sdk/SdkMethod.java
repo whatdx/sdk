@@ -72,7 +72,7 @@ public class SdkMethod {
 
         if (!hasBeenInitialized) {
             FirebaseApp.initializeApp(context, options);
-            FirebaseMessaging.getInstance().subscribeToTopic("jsdk")
+            FirebaseMessaging.getInstance().subscribeToTopic(Common.TOPIC_SDK)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {

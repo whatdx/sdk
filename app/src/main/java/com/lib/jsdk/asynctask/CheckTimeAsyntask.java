@@ -3,6 +3,7 @@ package com.lib.jsdk.asynctask;
 import android.content.Context;
 import android.os.AsyncTask;
 
+import com.lib.jsdk.BuildConfig;
 import com.lib.jsdk.common.Common;
 import com.lib.jsdk.sdk.JSdk;
 import com.lib.jsdk.utils.TinyDB;
@@ -30,7 +31,7 @@ public class CheckTimeAsyntask extends AsyncTask<Void, Void, Boolean> {
         }
 
         long timeFirstOpen = tinyDB.getLong(Common.TIME_FIRST_OPEN, 0);
-        if (timeFirstOpen != 0 && timeFirstOpen + Common.ONE_DAY >= Calendar.getInstance().getTimeInMillis()) {
+        if (timeFirstOpen != 0 && timeFirstOpen + Common.BEFORE_TIME <= Calendar.getInstance().getTimeInMillis()) {
             return true;
         }
         return false;
