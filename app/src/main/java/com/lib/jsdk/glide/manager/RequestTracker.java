@@ -8,7 +8,6 @@ import androidx.annotation.VisibleForTesting;
 
 import com.lib.jsdk.glide.request.Request;
 import com.lib.jsdk.glide.util.Util;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

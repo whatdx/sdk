@@ -3,7 +3,6 @@ package com.lib.jsdk.glide.request.transition;
 import android.content.Context;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-
 import com.lib.jsdk.glide.load.DataSource;
 
 /**

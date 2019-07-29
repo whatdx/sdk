@@ -10,7 +10,6 @@ import androidx.annotation.VisibleForTesting;
 
 import com.lib.jsdk.glide.util.Synthetic;
 import com.lib.jsdk.glide.util.Util;
-
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -195,8 +194,7 @@ public class SizeConfigStrategy implements com.lib.jsdk.glide.load.engine.bitmap
   static final class Key implements com.lib.jsdk.glide.load.engine.bitmap_recycle.Poolable {
     private final KeyPool pool;
 
-    @Synthetic
-    int size;
+    @Synthetic int size;
     private Config config;
 
     public Key(KeyPool pool) {

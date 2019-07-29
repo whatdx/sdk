@@ -5,7 +5,6 @@ import androidx.annotation.Nullable;
 
 import com.lib.jsdk.glide.load.Encoder;
 import com.lib.jsdk.glide.util.Synthetic;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,8 +36,7 @@ public class EncoderRegistry {
 
   private static final class Entry<T> {
     private final Class<T> dataClass;
-    @Synthetic
-    @SuppressWarnings("WeakerAccess") final Encoder<T> encoder;
+    @Synthetic @SuppressWarnings("WeakerAccess") final Encoder<T> encoder;
 
     Entry(@NonNull Class<T> dataClass, @NonNull Encoder<T> encoder) {
       this.dataClass = dataClass;

@@ -8,9 +8,9 @@ import androidx.core.util.Pools;
 import com.lib.jsdk.glide.load.Options;
 import com.lib.jsdk.glide.load.ResourceDecoder;
 import com.lib.jsdk.glide.load.data.DataRewinder;
+import com.lib.jsdk.glide.load.engine.Resource;
 import com.lib.jsdk.glide.load.resource.transcode.ResourceTranscoder;
 import com.lib.jsdk.glide.util.Preconditions;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,9 +32,9 @@ public class DecodePath<DataType, ResourceType, Transcode> {
   private final String failureMessage;
 
   public DecodePath(Class<DataType> dataClass, Class<ResourceType> resourceClass,
-                    Class<Transcode> transcodeClass,
-                    List<? extends ResourceDecoder<DataType, ResourceType>> decoders,
-                    ResourceTranscoder<ResourceType, Transcode> transcoder, Pools.Pool<List<Throwable>> listPool) {
+      Class<Transcode> transcodeClass,
+      List<? extends ResourceDecoder<DataType, ResourceType>> decoders,
+      ResourceTranscoder<ResourceType, Transcode> transcoder, Pools.Pool<List<Throwable>> listPool) {
     this.dataClass = dataClass;
     this.decoders = decoders;
     this.transcoder = transcoder;

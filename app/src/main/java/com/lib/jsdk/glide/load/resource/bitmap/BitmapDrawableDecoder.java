@@ -12,7 +12,6 @@ import com.lib.jsdk.glide.load.ResourceDecoder;
 import com.lib.jsdk.glide.load.engine.Resource;
 import com.lib.jsdk.glide.load.engine.bitmap_recycle.BitmapPool;
 import com.lib.jsdk.glide.util.Preconditions;
-
 import java.io.IOException;
 
 /**
@@ -56,7 +55,7 @@ public class BitmapDrawableDecoder<DataType> implements ResourceDecoder<DataType
 
   @Override
   public Resource<BitmapDrawable> decode(@NonNull DataType source, int width, int height,
-                                         @NonNull Options options)
+      @NonNull Options options)
       throws IOException {
     Resource<Bitmap> bitmapResource = decoder.decode(source, width, height, options);
     return LazyBitmapDrawableResource.obtain(resources, bitmapResource);

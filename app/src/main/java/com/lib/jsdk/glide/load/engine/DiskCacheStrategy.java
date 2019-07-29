@@ -163,7 +163,7 @@ public abstract class DiskCacheStrategy {
    * com.lib.jsdk.glide.load.ResourceEncoder} will use to encode the resource.
    */
   public abstract boolean isResourceCacheable(boolean isFromAlternateCacheKey,
-                                              DataSource dataSource, EncodeStrategy encodeStrategy);
+      DataSource dataSource, EncodeStrategy encodeStrategy);
 
   /**
    * Returns true if this request should attempt to decode cached resource data.

@@ -5,12 +5,12 @@ import android.widget.AbsListView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.lib.jsdk.glide.RequestManager;
 import com.lib.jsdk.glide.request.target.BaseTarget;
 import com.lib.jsdk.glide.request.target.SizeReadyCallback;
 import com.lib.jsdk.glide.request.transition.Transition;
 import com.lib.jsdk.glide.util.Synthetic;
 import com.lib.jsdk.glide.util.Util;
-
 import java.util.List;
 import java.util.Queue;
 
@@ -243,10 +243,8 @@ public class ListPreloader<T> implements AbsListView.OnScrollListener {
   }
 
   private static final class PreloadTarget extends BaseTarget<Object> {
-    @Synthetic
-    int photoHeight;
-    @Synthetic
-    int photoWidth;
+    @Synthetic int photoHeight;
+    @Synthetic int photoWidth;
 
     @Synthetic
     PreloadTarget() { }

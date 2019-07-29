@@ -3,7 +3,6 @@ package com.lib.jsdk.glide.provider;
 import androidx.annotation.NonNull;
 
 import com.lib.jsdk.glide.load.ImageHeaderParser;
-
 import java.util.ArrayList;
 import java.util.List;
 

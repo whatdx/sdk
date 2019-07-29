@@ -5,7 +5,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.util.Log;
-
 import com.lib.jsdk.glide.load.DecodeFormat;
 
 import java.io.File;

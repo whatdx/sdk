@@ -7,7 +7,6 @@ import androidx.annotation.VisibleForTesting;
 
 import com.lib.jsdk.glide.util.Preconditions;
 import com.lib.jsdk.glide.util.Synthetic;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.NavigableMap;
@@ -242,8 +241,7 @@ public final class LruArrayPool implements ArrayPool {
 
   private static final class Key implements com.lib.jsdk.glide.load.engine.bitmap_recycle.Poolable {
     private final KeyPool pool;
-    @Synthetic
-    int size;
+    @Synthetic int size;
     private Class<?> arrayClass;
 
     Key(KeyPool pool) {

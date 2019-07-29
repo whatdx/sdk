@@ -9,7 +9,6 @@ import com.lib.jsdk.glide.ListPreloader;
 import com.lib.jsdk.glide.request.target.SizeReadyCallback;
 import com.lib.jsdk.glide.request.target.ViewTarget;
 import com.lib.jsdk.glide.request.transition.Transition;
-
 import java.util.Arrays;
 
 /**

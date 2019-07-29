@@ -10,8 +10,7 @@ import com.lib.jsdk.glide.util.Synthetic;
  * {@link com.lib.jsdk.glide.request.target.Target}.
  */
 public class NoTransition<R> implements Transition<R> {
-  @Synthetic
-  static final NoTransition<?> NO_ANIMATION = new NoTransition<>();
+  @Synthetic static final NoTransition<?> NO_ANIMATION = new NoTransition<>();
   @SuppressWarnings("rawtypes")
   private static final TransitionFactory<?> NO_ANIMATION_FACTORY = new NoAnimationFactory();
 

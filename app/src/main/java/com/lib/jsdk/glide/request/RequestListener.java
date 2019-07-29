@@ -75,7 +75,7 @@ public interface RequestListener<R> {
    * @param resource The resource that was loaded for the target.
    * @param model The specific model that was used to load the image.
    * @param target The target the model was loaded into.
-   * @param dataSource The {@link DataSource } the resource was loaded from.
+   * @param dataSource The {@link DataSource} the resource was loaded from.
    * @param isFirstResource {@code true} if this is the first resource to in this load to be loaded
    *     into the target. For example when loading a thumbnail and a full-sized image, this will be
    *     {@code true} for the first image to load and {@code false} for the second.

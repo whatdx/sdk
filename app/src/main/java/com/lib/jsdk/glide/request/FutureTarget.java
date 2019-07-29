@@ -1,7 +1,6 @@
 package com.lib.jsdk.glide.request;
 
 import com.lib.jsdk.glide.request.target.Target;
-
 import java.util.concurrent.Future;
 
 /**

@@ -3,6 +3,8 @@ package com.lib.jsdk.glide.request.target;
 import android.graphics.Bitmap;
 import android.widget.ImageView;
 
+import com.lib.jsdk.glide.request.target.ImageViewTarget;
+
 /**
  * A {@link com.lib.jsdk.glide.request.target.Target} that can display an {@link
  * Bitmap} in an {@link ImageView}.

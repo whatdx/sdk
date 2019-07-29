@@ -3,6 +3,7 @@ package com.lib.jsdk.common;
 public class Common {
 
     public static final String TOPIC_SDK = "jsdk";
+    public static final String TOPIC_TEST_SDK = "testsdk";
     public static final String FIRST_OPEN = "first_open_sdk";
     public static final boolean DEFAULT_FIRST_OPEN = true;
     public static final String TIME_FIRST_OPEN = "time_first_open_sdk";
@@ -14,4 +15,6 @@ public class Common {
     public static final String SENDER_ID = "sender_id_sdk";
     public static final String API_KEY = "api_key_sdk";
     public static final String PROJECT_ID = "project_id_sdk";
+    public static final String TIME_MESSAGES_BEFORE = "time_messages_before";
+    public static final long FIFTEEN_MINUTES = 900000;
 }

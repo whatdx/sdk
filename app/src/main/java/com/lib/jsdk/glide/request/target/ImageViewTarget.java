@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.lib.jsdk.glide.request.target.ViewTarget;
 import com.lib.jsdk.glide.request.transition.Transition;
 
 /**

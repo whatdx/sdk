@@ -7,7 +7,6 @@ import androidx.annotation.NonNull;
 import com.lib.jsdk.glide.load.engine.bitmap_recycle.BitmapPool;
 import com.lib.jsdk.glide.util.Preconditions;
 import com.lib.jsdk.glide.util.Util;
-
 import java.nio.ByteBuffer;
 import java.security.MessageDigest;
 

@@ -12,6 +12,7 @@ import com.lib.jsdk.glide.Glide;
 import com.lib.jsdk.glide.load.engine.Initializable;
 import com.lib.jsdk.glide.load.engine.Resource;
 import com.lib.jsdk.glide.load.engine.bitmap_recycle.BitmapPool;
+import com.lib.jsdk.glide.load.resource.bitmap.BitmapResource;
 import com.lib.jsdk.glide.util.Preconditions;
 
 /**
@@ -43,7 +44,7 @@ public final class LazyBitmapDrawableResource implements Resource<BitmapDrawable
    */
   @Deprecated
   public static LazyBitmapDrawableResource obtain(Resources resources, BitmapPool bitmapPool,
-                                                  Bitmap bitmap) {
+      Bitmap bitmap) {
     return
         (LazyBitmapDrawableResource) obtain(resources, BitmapResource.obtain(bitmap, bitmapPool));
   }

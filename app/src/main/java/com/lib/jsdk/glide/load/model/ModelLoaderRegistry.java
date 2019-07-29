@@ -5,7 +5,6 @@ import androidx.annotation.Nullable;
 import androidx.core.util.Pools;
 
 import com.lib.jsdk.glide.util.Synthetic;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -62,7 +61,7 @@ public class ModelLoaderRegistry {
   }
 
   private <Model, Data> void tearDown(
-      @NonNull List<ModelLoaderFactory<? extends Model, ? extends Data>> factories) {
+      @NonNull List<com.lib.jsdk.glide.load.model.ModelLoaderFactory<? extends Model, ? extends Data>> factories) {
     for (ModelLoaderFactory<? extends Model, ? extends Data> factory : factories) {
       factory.teardown();
     }
@@ -143,8 +142,7 @@ public class ModelLoaderRegistry {
     }
 
     private static class Entry<Model> {
-      @Synthetic
-      final List<com.lib.jsdk.glide.load.model.ModelLoader<Model, ?>> loaders;
+      @Synthetic final List<com.lib.jsdk.glide.load.model.ModelLoader<Model, ?>> loaders;
 
       public Entry(List<ModelLoader<Model, ?>> loaders) {
         this.loaders = loaders;

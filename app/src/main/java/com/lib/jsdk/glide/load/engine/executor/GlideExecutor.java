@@ -8,7 +8,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.VisibleForTesting;
 
 import com.lib.jsdk.glide.util.Synthetic;
-
 import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.Callable;
@@ -416,10 +415,8 @@ public final class GlideExecutor implements ExecutorService {
         + android.os.Process.THREAD_PRIORITY_MORE_FAVORABLE;
 
     private final String name;
-    @Synthetic
-    final UncaughtThrowableStrategy uncaughtThrowableStrategy;
-    @Synthetic
-    final boolean preventNetworkOperations;
+    @Synthetic final UncaughtThrowableStrategy uncaughtThrowableStrategy;
+    @Synthetic final boolean preventNetworkOperations;
     private int threadNum;
 
     DefaultThreadFactory(String name, UncaughtThrowableStrategy uncaughtThrowableStrategy,

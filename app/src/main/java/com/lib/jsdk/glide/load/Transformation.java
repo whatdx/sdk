@@ -4,8 +4,9 @@ import android.content.Context;
 
 import androidx.annotation.NonNull;
 
+import com.lib.jsdk.glide.load.Key;
 import com.lib.jsdk.glide.load.engine.Resource;
-
+import java.nio.charset.Charset;
 import java.security.MessageDigest;
 
 /**

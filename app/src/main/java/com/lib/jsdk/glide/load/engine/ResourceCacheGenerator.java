@@ -8,7 +8,6 @@ import com.lib.jsdk.glide.load.Transformation;
 import com.lib.jsdk.glide.load.data.DataFetcher;
 import com.lib.jsdk.glide.load.model.ModelLoader;
 import com.lib.jsdk.glide.load.model.ModelLoader.LoadData;
-
 import java.io.File;
 import java.util.List;
 

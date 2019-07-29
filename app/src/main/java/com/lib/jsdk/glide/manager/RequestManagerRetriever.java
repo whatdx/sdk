@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.content.ContextWrapper;
+import android.os.Build;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
@@ -24,9 +25,14 @@ import androidx.fragment.app.FragmentManager;
 
 import com.lib.jsdk.glide.Glide;
 import com.lib.jsdk.glide.RequestManager;
+import com.lib.jsdk.glide.manager.ApplicationLifecycle;
+import com.lib.jsdk.glide.manager.EmptyRequestManagerTreeNode;
+import com.lib.jsdk.glide.manager.Lifecycle;
+import com.lib.jsdk.glide.manager.RequestManagerFragment;
+import com.lib.jsdk.glide.manager.RequestManagerTreeNode;
+import com.lib.jsdk.glide.manager.SupportRequestManagerFragment;
 import com.lib.jsdk.glide.util.Preconditions;
 import com.lib.jsdk.glide.util.Util;
-
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -57,7 +63,7 @@ public class RequestManagerRetriever implements Handler.Callback {
    */
   @SuppressWarnings("deprecation")
   @VisibleForTesting
-  final Map<android.app.FragmentManager, RequestManagerFragment> pendingRequestManagerFragments =
+  final Map<android.app.FragmentManager, com.lib.jsdk.glide.manager.RequestManagerFragment> pendingRequestManagerFragments =
       new HashMap<>();
 
   /**
@@ -378,9 +384,9 @@ public class RequestManagerRetriever implements Handler.Callback {
   @Deprecated
   @NonNull
   private RequestManager fragmentGet(@NonNull Context context,
-                                     @NonNull android.app.FragmentManager fm,
-                                     @Nullable android.app.Fragment parentHint,
-                                     boolean isParentVisible) {
+      @NonNull android.app.FragmentManager fm,
+      @Nullable android.app.Fragment parentHint,
+      boolean isParentVisible) {
     RequestManagerFragment current = getRequestManagerFragment(fm, parentHint, isParentVisible);
     RequestManager requestManager = current.getRequestManager();
     if (requestManager == null) {
@@ -408,7 +414,7 @@ public class RequestManagerRetriever implements Handler.Callback {
 
   @NonNull
   private SupportRequestManagerFragment getSupportRequestManagerFragment(
-          @NonNull final FragmentManager fm, @Nullable Fragment parentHint, boolean isParentVisible) {
+      @NonNull final FragmentManager fm, @Nullable Fragment parentHint, boolean isParentVisible) {
     SupportRequestManagerFragment current =
         (SupportRequestManagerFragment) fm.findFragmentByTag(FRAGMENT_TAG);
     if (current == null) {

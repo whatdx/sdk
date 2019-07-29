@@ -18,6 +18,10 @@ import com.lib.jsdk.glide.load.engine.Engine;
 import com.lib.jsdk.glide.load.engine.GlideException;
 import com.lib.jsdk.glide.load.engine.Resource;
 import com.lib.jsdk.glide.load.resource.drawable.DrawableDecoderCompat;
+import com.lib.jsdk.glide.request.Request;
+import com.lib.jsdk.glide.request.RequestCoordinator;
+import com.lib.jsdk.glide.request.RequestListener;
+import com.lib.jsdk.glide.request.ResourceCallback;
 import com.lib.jsdk.glide.request.target.SizeReadyCallback;
 import com.lib.jsdk.glide.request.target.Target;
 import com.lib.jsdk.glide.request.transition.Transition;
@@ -27,7 +31,6 @@ import com.lib.jsdk.glide.util.Synthetic;
 import com.lib.jsdk.glide.util.Util;
 import com.lib.jsdk.glide.util.pool.FactoryPools;
 import com.lib.jsdk.glide.util.pool.StateVerifier;
-
 import java.util.List;
 import java.util.concurrent.Executor;
 
@@ -38,7 +41,7 @@ import java.util.concurrent.Executor;
  * @param <R> The type of the resource that will be transcoded from the loaded resource.
  */
 public final class SingleRequest<R> implements com.lib.jsdk.glide.request.Request,
-        SizeReadyCallback,
+    SizeReadyCallback,
         ResourceCallback,
     FactoryPools.Poolable {
   /** Tag for logging internal events, not generally suitable for public use. */

@@ -3,7 +3,6 @@ package com.lib.jsdk.glide.manager;
 import androidx.annotation.NonNull;
 
 import com.lib.jsdk.glide.RequestManager;
-
 import java.util.Set;
 
 /**

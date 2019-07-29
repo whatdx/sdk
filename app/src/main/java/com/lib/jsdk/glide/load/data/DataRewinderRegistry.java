@@ -3,7 +3,6 @@ package com.lib.jsdk.glide.load.data;
 import androidx.annotation.NonNull;
 
 import com.lib.jsdk.glide.util.Preconditions;
-
 import java.util.HashMap;
 import java.util.Map;
 

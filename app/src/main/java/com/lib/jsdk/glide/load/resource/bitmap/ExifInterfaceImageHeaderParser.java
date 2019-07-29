@@ -8,9 +8,7 @@ import androidx.annotation.RequiresApi;
 
 import com.lib.jsdk.glide.load.ImageHeaderParser;
 import com.lib.jsdk.glide.load.engine.bitmap_recycle.ArrayPool;
-import com.lib.jsdk.glide.util.ByteBufferUtil;
-
-import java.io.IOException;
+import com.lib.jsdk.glide.util.ByteBufferUtil;import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
 

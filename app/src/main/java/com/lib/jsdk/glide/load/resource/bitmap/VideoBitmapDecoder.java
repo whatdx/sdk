@@ -2,7 +2,6 @@ package com.lib.jsdk.glide.load.resource.bitmap;
 
 import android.content.Context;
 import android.os.ParcelFileDescriptor;
-
 import com.lib.jsdk.glide.Glide;
 import com.lib.jsdk.glide.load.engine.bitmap_recycle.BitmapPool;
 

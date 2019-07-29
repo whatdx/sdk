@@ -6,7 +6,6 @@ import androidx.core.util.Pools;
 import com.lib.jsdk.glide.load.Options;
 import com.lib.jsdk.glide.load.data.DataRewinder;
 import com.lib.jsdk.glide.util.Preconditions;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -29,8 +28,8 @@ public class LoadPath<Data, ResourceType, Transcode> {
   private final String failureMessage;
 
   public LoadPath(Class<Data> dataClass, Class<ResourceType> resourceClass,
-                  Class<Transcode> transcodeClass,
-                  List<DecodePath<Data, ResourceType, Transcode>> decodePaths, Pools.Pool<List<Throwable>> listPool) {
+      Class<Transcode> transcodeClass,
+      List<DecodePath<Data, ResourceType, Transcode>> decodePaths, Pools.Pool<List<Throwable>> listPool) {
     this.dataClass = dataClass;
     this.listPool = listPool;
     this.decodePaths = Preconditions.checkNotEmpty(decodePaths);
@@ -49,9 +48,9 @@ public class LoadPath<Data, ResourceType, Transcode> {
   }
 
   private Resource<Transcode> loadWithExceptionList(DataRewinder<Data> rewinder,
-                                                    @NonNull Options options,
-                                                    int width, int height, DecodePath.DecodeCallback<ResourceType> decodeCallback,
-                                                    List<Throwable> exceptions) throws GlideException {
+      @NonNull Options options,
+      int width, int height, DecodePath.DecodeCallback<ResourceType> decodeCallback,
+      List<Throwable> exceptions) throws GlideException {
     Resource<Transcode> result = null;
     //noinspection ForLoopReplaceableByForEach to improve perf
     for (int i = 0, size = decodePaths.size(); i < size; i++) {

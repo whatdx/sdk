@@ -11,7 +11,6 @@ import com.lib.jsdk.glide.load.model.GlideUrl;
 import com.lib.jsdk.glide.load.model.Headers;
 import com.lib.jsdk.glide.load.model.ModelCache;
 import com.lib.jsdk.glide.load.model.ModelLoader;
-
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -34,7 +33,7 @@ public abstract class BaseGlideUrlLoader<Model> implements ModelLoader<Model, In
   }
 
   protected BaseGlideUrlLoader(ModelLoader<GlideUrl, InputStream> concreteLoader,
-                               @Nullable ModelCache<Model, GlideUrl> modelCache) {
+      @Nullable ModelCache<Model, GlideUrl> modelCache) {
     this.concreteLoader = concreteLoader;
     this.modelCache = modelCache;
   }

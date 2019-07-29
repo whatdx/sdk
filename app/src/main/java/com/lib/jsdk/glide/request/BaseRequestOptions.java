@@ -34,7 +34,6 @@ import com.lib.jsdk.glide.signature.EmptySignature;
 import com.lib.jsdk.glide.util.CachedHashCodeArrayMap;
 import com.lib.jsdk.glide.util.Preconditions;
 import com.lib.jsdk.glide.util.Util;
-
 import java.util.Map;
 
 /**
@@ -850,13 +849,13 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
   @NonNull
   private T scaleOnlyTransform(
-          @NonNull DownsampleStrategy strategy, @NonNull Transformation<Bitmap> transformation) {
+      @NonNull DownsampleStrategy strategy, @NonNull Transformation<Bitmap> transformation) {
     return scaleOnlyTransform(strategy, transformation, true /*isTransformationRequired*/);
   }
 
   @NonNull
   private T optionalScaleOnlyTransform(
-          @NonNull DownsampleStrategy strategy, @NonNull Transformation<Bitmap> transformation) {
+      @NonNull DownsampleStrategy strategy, @NonNull Transformation<Bitmap> transformation) {
     return scaleOnlyTransform(strategy, transformation, false /*isTransformationRequired*/);
   }
 
@@ -959,7 +958,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
 
   @NonNull
   T transform(
-          @NonNull Transformation<Bitmap> transformation, boolean isRequired) {
+      @NonNull Transformation<Bitmap> transformation, boolean isRequired) {
     if (isAutoCloneEnabled) {
       return clone().transform(transformation, isRequired);
     }

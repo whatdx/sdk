@@ -7,7 +7,6 @@ import androidx.collection.ArrayMap;
 import androidx.collection.SimpleArrayMap;
 
 import com.lib.jsdk.glide.util.CachedHashCodeArrayMap;
-
 import java.security.MessageDigest;
 
 /**
@@ -64,7 +63,7 @@ public final class Options implements Key {
 
   @SuppressWarnings("unchecked")
   private static <T> void updateDiskCacheKey(@NonNull Option<T> option, @NonNull Object value,
-                                             @NonNull MessageDigest md) {
+      @NonNull MessageDigest md) {
     option.update((T) value, md);
   }
 }

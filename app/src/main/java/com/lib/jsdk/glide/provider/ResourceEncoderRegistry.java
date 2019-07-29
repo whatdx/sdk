@@ -5,7 +5,6 @@ import androidx.annotation.Nullable;
 
 import com.lib.jsdk.glide.load.ResourceEncoder;
 import com.lib.jsdk.glide.util.Synthetic;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,8 +42,7 @@ public class ResourceEncoderRegistry {
 
   private static final class Entry<T> {
     private final Class<T> resourceClass;
-    @Synthetic
-    final ResourceEncoder<T> encoder;
+    @Synthetic final ResourceEncoder<T> encoder;
 
     Entry(@NonNull Class<T> resourceClass, @NonNull ResourceEncoder<T> encoder) {
       this.resourceClass = resourceClass;

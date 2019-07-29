@@ -8,7 +8,6 @@ import com.lib.jsdk.glide.load.engine.DecodePath;
 import com.lib.jsdk.glide.load.engine.LoadPath;
 import com.lib.jsdk.glide.load.resource.transcode.UnitTranscoder;
 import com.lib.jsdk.glide.util.MultiClassKey;
-
 import java.util.Collections;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -74,7 +73,7 @@ public class LoadPathCache {
   }
 
   private MultiClassKey getKey(Class<?> dataClass, Class<?> resourceClass,
-                               Class<?> transcodeClass) {
+      Class<?> transcodeClass) {
      MultiClassKey key = keyRef.getAndSet(null);
     if (key == null) {
       key = new MultiClassKey();

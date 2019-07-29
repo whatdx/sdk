@@ -16,7 +16,6 @@ import com.lib.jsdk.glide.load.engine.bitmap_recycle.ArrayPool;
 import com.lib.jsdk.glide.util.LogTime;
 import com.lib.jsdk.glide.util.Util;
 import com.lib.jsdk.glide.util.pool.GlideTrace;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -72,7 +71,7 @@ public class BitmapEncoder implements ResourceEncoder<Bitmap> {
 
   @Override
   public boolean encode(@NonNull Resource<Bitmap> resource, @NonNull File file,
-                        @NonNull Options options) {
+      @NonNull Options options) {
     final Bitmap bitmap = resource.get();
     Bitmap.CompressFormat format = getFormat(bitmap, options);
     GlideTrace.

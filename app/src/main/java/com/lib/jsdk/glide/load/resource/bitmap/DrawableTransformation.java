@@ -11,7 +11,6 @@ import com.lib.jsdk.glide.Glide;
 import com.lib.jsdk.glide.load.Transformation;
 import com.lib.jsdk.glide.load.engine.Resource;
 import com.lib.jsdk.glide.load.engine.bitmap_recycle.BitmapPool;
-
 import java.security.MessageDigest;
 
 /**

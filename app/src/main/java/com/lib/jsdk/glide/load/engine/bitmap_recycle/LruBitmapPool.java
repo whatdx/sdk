@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.lib.jsdk.glide.util.Synthetic;
-
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;

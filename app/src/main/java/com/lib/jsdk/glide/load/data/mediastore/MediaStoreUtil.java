@@ -3,7 +3,6 @@ package com.lib.jsdk.glide.load.data.mediastore;
 import android.content.ContentResolver;
 import android.net.Uri;
 import android.provider.MediaStore;
-
 import com.lib.jsdk.glide.request.target.Target;
 
 /**

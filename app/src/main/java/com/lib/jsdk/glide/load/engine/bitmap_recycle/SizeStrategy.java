@@ -9,7 +9,6 @@ import androidx.annotation.VisibleForTesting;
 
 import com.lib.jsdk.glide.util.Synthetic;
 import com.lib.jsdk.glide.util.Util;
-
 import java.util.NavigableMap;
 
 /**
@@ -105,8 +104,7 @@ final class SizeStrategy implements LruPoolStrategy {
     return getBitmapString(size);
   }
 
-  @Synthetic
-  static String getBitmapString(int size) {
+  @Synthetic static String getBitmapString(int size) {
     return "[" + size + "]";
   }
 
@@ -129,8 +127,7 @@ final class SizeStrategy implements LruPoolStrategy {
   @VisibleForTesting
   static final class Key implements com.lib.jsdk.glide.load.engine.bitmap_recycle.Poolable {
     private final KeyPool pool;
-    @Synthetic
-    int size;
+    @Synthetic int size;
 
     Key(KeyPool pool) {
       this.pool = pool;

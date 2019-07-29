@@ -118,8 +118,7 @@ public final class MemorySizeCalculator {
   }
 
   @TargetApi(Build.VERSION_CODES.KITKAT)
-  @Synthetic
-  static boolean isLowMemoryDevice(ActivityManager activityManager) {
+  @Synthetic static boolean isLowMemoryDevice(ActivityManager activityManager) {
     // Explicitly check with an if statement, on some devices both parts of boolean expressions
     // can be evaluated even if we'd normally expect a short circuit.
     //noinspection SimplifiableIfStatement
@@ -153,25 +152,17 @@ public final class MemorySizeCalculator {
     // 4MB.
     static final int ARRAY_POOL_SIZE_BYTES = 4 * 1024 * 1024;
 
-    @Synthetic
-    final Context context;
+    @Synthetic final Context context;
 
     // Modifiable (non-final) for testing.
-    @Synthetic
-    ActivityManager activityManager;
-    @Synthetic
-    ScreenDimensions screenDimensions;
+    @Synthetic ActivityManager activityManager;
+    @Synthetic ScreenDimensions screenDimensions;
 
-    @Synthetic
-    float memoryCacheScreens = MEMORY_CACHE_TARGET_SCREENS;
-    @Synthetic
-    float bitmapPoolScreens = BITMAP_POOL_TARGET_SCREENS;
-    @Synthetic
-    float maxSizeMultiplier = MAX_SIZE_MULTIPLIER;
-    @Synthetic
-    float lowMemoryMaxSizeMultiplier = LOW_MEMORY_MAX_SIZE_MULTIPLIER;
-    @Synthetic
-    int arrayPoolSizeBytes = ARRAY_POOL_SIZE_BYTES;
+    @Synthetic float memoryCacheScreens = MEMORY_CACHE_TARGET_SCREENS;
+    @Synthetic float bitmapPoolScreens = BITMAP_POOL_TARGET_SCREENS;
+    @Synthetic float maxSizeMultiplier = MAX_SIZE_MULTIPLIER;
+    @Synthetic float lowMemoryMaxSizeMultiplier = LOW_MEMORY_MAX_SIZE_MULTIPLIER;
+    @Synthetic int arrayPoolSizeBytes = ARRAY_POOL_SIZE_BYTES;
 
     public Builder(Context context) {
       this.context = context;

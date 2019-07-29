@@ -12,6 +12,7 @@ import com.lib.jsdk.glide.load.Options;
 import com.lib.jsdk.glide.load.engine.Resource;
 import com.lib.jsdk.glide.load.engine.bitmap_recycle.BitmapPool;
 import com.lib.jsdk.glide.load.resource.bitmap.LazyBitmapDrawableResource;
+import com.lib.jsdk.glide.load.resource.transcode.ResourceTranscoder;
 import com.lib.jsdk.glide.util.Preconditions;
 
 /**

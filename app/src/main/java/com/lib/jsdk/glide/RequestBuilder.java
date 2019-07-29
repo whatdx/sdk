@@ -1,5 +1,9 @@
 package com.lib.jsdk.glide;
 
+import static com.lib.jsdk.glide.request.RequestOptions.diskCacheStrategyOf;
+import static com.lib.jsdk.glide.request.RequestOptions.signatureOf;
+import static com.lib.jsdk.glide.request.RequestOptions.skipMemoryCacheOf;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -13,6 +17,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RawRes;
 
+import com.lib.jsdk.glide.Glide;
+import com.lib.jsdk.glide.Priority;
+import com.lib.jsdk.glide.RequestManager;
 import com.lib.jsdk.glide.load.Transformation;
 import com.lib.jsdk.glide.load.engine.DiskCacheStrategy;
 import com.lib.jsdk.glide.request.BaseRequestOptions;
@@ -33,16 +40,11 @@ import com.lib.jsdk.glide.util.Executors;
 import com.lib.jsdk.glide.util.Preconditions;
 import com.lib.jsdk.glide.util.Synthetic;
 import com.lib.jsdk.glide.util.Util;
-
 import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executor;
-
-import static com.lib.jsdk.glide.request.RequestOptions.diskCacheStrategyOf;
-import static com.lib.jsdk.glide.request.RequestOptions.signatureOf;
-import static com.lib.jsdk.glide.request.RequestOptions.skipMemoryCacheOf;
 
 /**
  * A generic class that can handle setting options and staring loads for generic resource types.
@@ -54,7 +56,7 @@ import static com.lib.jsdk.glide.request.RequestOptions.skipMemoryCacheOf;
 @SuppressWarnings({"unused", "WeakerAccess"})
 public class RequestBuilder<TranscodeType> extends BaseRequestOptions<RequestBuilder<TranscodeType>>
     implements Cloneable,
-        ModelTypes<RequestBuilder<TranscodeType>> {
+    ModelTypes<RequestBuilder<TranscodeType>> {
   // Used in generated subclasses
   protected static final RequestOptions DOWNLOAD_ONLY_OPTIONS =
       new RequestOptions().diskCacheStrategy(DiskCacheStrategy.DATA).priority(com.lib.jsdk.glide.Priority.LOW)

@@ -10,7 +10,6 @@ import androidx.annotation.NonNull;
 import com.lib.jsdk.glide.load.Transformation;
 import com.lib.jsdk.glide.load.engine.Resource;
 import com.lib.jsdk.glide.util.Preconditions;
-
 import java.security.MessageDigest;
 
 /**

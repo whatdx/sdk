@@ -11,7 +11,6 @@ import com.lib.jsdk.glide.load.data.DataFetcher;
 import com.lib.jsdk.glide.load.model.ModelLoader;
 import com.lib.jsdk.glide.load.model.ModelLoader.LoadData;
 import com.lib.jsdk.glide.util.LogTime;
-
 import java.util.Collections;
 
 /**
@@ -132,7 +131,7 @@ class SourceGenerator implements DataFetcherGenerator,
   // Called from source cache generator.
   @Override
   public void onDataFetcherReady(Key sourceKey, Object data, DataFetcher<?> fetcher,
-                                 DataSource dataSource, Key attemptedKey) {
+      DataSource dataSource, Key attemptedKey) {
     // This data fetcher will be loading from a File and provide the wrong data source, so override
     // with the data source of the original fetcher
     cb.onDataFetcherReady(sourceKey, data, fetcher, loadData.fetcher.getDataSource(), sourceKey);
@@ -140,7 +139,7 @@ class SourceGenerator implements DataFetcherGenerator,
 
   @Override
   public void onDataFetcherFailed(Key sourceKey, Exception e, DataFetcher<?> fetcher,
-                                  DataSource dataSource) {
+      DataSource dataSource) {
     cb.onDataFetcherFailed(sourceKey, e, fetcher, loadData.fetcher.getDataSource());
   }
 }

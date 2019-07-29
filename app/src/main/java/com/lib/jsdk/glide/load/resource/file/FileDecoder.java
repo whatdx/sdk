@@ -21,7 +21,7 @@ public class FileDecoder implements ResourceDecoder<File, File> {
 
   @Override
   public Resource<File> decode(@NonNull File source, int width, int height,
-                               @NonNull Options options) {
+      @NonNull Options options) {
     return new FileResource(source);
   }
 }

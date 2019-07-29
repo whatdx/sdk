@@ -16,7 +16,7 @@ import com.lib.jsdk.glide.request.transition.TransitionFactory;
 // Public API.
 @SuppressWarnings({"unused", "WeakerAccess"})
 public final class BitmapTransitionOptions extends
-        TransitionOptions<BitmapTransitionOptions, Bitmap> {
+    TransitionOptions<BitmapTransitionOptions, Bitmap> {
 
   /**
    * Returns a {@link BitmapTransitionOptions} object that enables a cross fade animation.

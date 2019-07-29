@@ -4,7 +4,6 @@ package com.lib.jsdk.glide.load.resource.bytes;
 import androidx.annotation.NonNull;
 
 import com.lib.jsdk.glide.load.data.DataRewinder;
-
 import java.nio.ByteBuffer;
 
 /**

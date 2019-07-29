@@ -12,8 +12,9 @@ import androidx.annotation.Nullable;
 import com.lib.jsdk.glide.load.engine.Resource;
 import com.lib.jsdk.glide.load.engine.bitmap_recycle.BitmapPool;
 import com.lib.jsdk.glide.load.engine.bitmap_recycle.BitmapPoolAdapter;
+import com.lib.jsdk.glide.load.resource.bitmap.BitmapResource;
+import com.lib.jsdk.glide.load.resource.bitmap.TransformationUtils;
 import com.lib.jsdk.glide.request.target.Target;
-
 import java.util.concurrent.locks.Lock;
 
 final class DrawableToBitmapConverter {
@@ -48,7 +49,7 @@ final class DrawableToBitmapConverter {
 
   @Nullable
   private static Bitmap drawToBitmap(
-          BitmapPool bitmapPool, Drawable drawable, int width, int height) {
+      BitmapPool bitmapPool, Drawable drawable, int width, int height) {
     if (width == Target.SIZE_ORIGINAL && drawable.getIntrinsicWidth() <= 0) {
       if (Log.isLoggable(TAG, Log.WARN)) {
         Log.w(TAG, "Unable to draw " + drawable + " to Bitmap with Target.SIZE_ORIGINAL because the"

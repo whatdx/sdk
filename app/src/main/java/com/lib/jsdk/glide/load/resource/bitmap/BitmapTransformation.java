@@ -11,6 +11,8 @@ import com.lib.jsdk.glide.load.engine.Resource;
 import com.lib.jsdk.glide.load.engine.bitmap_recycle.BitmapPool;
 import com.lib.jsdk.glide.request.target.Target;
 import com.lib.jsdk.glide.util.Util;
+import java.nio.charset.Charset;
+import java.security.MessageDigest;
 
 /**
  * A simple {@link Transformation} for transforming

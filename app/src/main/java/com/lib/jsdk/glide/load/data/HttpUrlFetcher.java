@@ -13,7 +13,6 @@ import com.lib.jsdk.glide.load.model.GlideUrl;
 import com.lib.jsdk.glide.util.ContentLengthInputStream;
 import com.lib.jsdk.glide.util.LogTime;
 import com.lib.jsdk.glide.util.Synthetic;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;

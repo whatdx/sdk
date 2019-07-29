@@ -203,10 +203,8 @@ public class FixedSizeDrawable extends Drawable {
 
   static final class State extends ConstantState {
     private final ConstantState wrapped;
-    @Synthetic
-    final int width;
-    @Synthetic
-    final int height;
+    @Synthetic final int width;
+    @Synthetic final int height;
 
     State(State other) {
       this(other.wrapped, other.width, other.height);

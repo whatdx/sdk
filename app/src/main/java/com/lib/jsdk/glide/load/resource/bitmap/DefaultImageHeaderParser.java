@@ -1,5 +1,11 @@
 package com.lib.jsdk.glide.load.resource.bitmap;
 
+import static com.lib.jsdk.glide.load.ImageHeaderParser.ImageType.GIF;
+import static com.lib.jsdk.glide.load.ImageHeaderParser.ImageType.JPEG;
+import static com.lib.jsdk.glide.load.ImageHeaderParser.ImageType.PNG;
+import static com.lib.jsdk.glide.load.ImageHeaderParser.ImageType.PNG_A;
+import static com.lib.jsdk.glide.load.ImageHeaderParser.ImageType.UNKNOWN;
+
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -7,18 +13,11 @@ import androidx.annotation.NonNull;
 import com.lib.jsdk.glide.load.ImageHeaderParser;
 import com.lib.jsdk.glide.load.engine.bitmap_recycle.ArrayPool;
 import com.lib.jsdk.glide.util.Preconditions;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.charset.Charset;
-
-import static com.lib.jsdk.glide.load.ImageHeaderParser.ImageType.GIF;
-import static com.lib.jsdk.glide.load.ImageHeaderParser.ImageType.JPEG;
-import static com.lib.jsdk.glide.load.ImageHeaderParser.ImageType.PNG;
-import static com.lib.jsdk.glide.load.ImageHeaderParser.ImageType.PNG_A;
-import static com.lib.jsdk.glide.load.ImageHeaderParser.ImageType.UNKNOWN;
 
 /**
  * A class for parsing the exif orientation and other data from an image header.

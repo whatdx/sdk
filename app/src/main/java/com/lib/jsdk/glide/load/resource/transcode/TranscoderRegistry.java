@@ -3,7 +3,6 @@ package com.lib.jsdk.glide.load.resource.transcode;
 import androidx.annotation.NonNull;
 
 import com.lib.jsdk.glide.util.Synthetic;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -82,8 +81,7 @@ public class TranscoderRegistry {
   private static final class Entry<Z, R> {
     private final Class<Z> fromClass;
     private final Class<R> toClass;
-    @Synthetic
-    final com.lib.jsdk.glide.load.resource.transcode.ResourceTranscoder<Z, R> transcoder;
+    @Synthetic final com.lib.jsdk.glide.load.resource.transcode.ResourceTranscoder<Z, R> transcoder;
 
     Entry(@NonNull Class<Z> fromClass, @NonNull Class<R> toClass,
         @NonNull ResourceTranscoder<Z, R> transcoder) {

@@ -7,7 +7,6 @@ import androidx.annotation.NonNull;
 import com.lib.jsdk.glide.load.Encoder;
 import com.lib.jsdk.glide.load.Options;
 import com.lib.jsdk.glide.util.ByteBufferUtil;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.ByteBuffer;

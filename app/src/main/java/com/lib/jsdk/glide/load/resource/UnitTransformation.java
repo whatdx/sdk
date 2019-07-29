@@ -6,7 +6,6 @@ import androidx.annotation.NonNull;
 
 import com.lib.jsdk.glide.load.Transformation;
 import com.lib.jsdk.glide.load.engine.Resource;
-
 import java.security.MessageDigest;
 
 /**
@@ -35,7 +34,7 @@ public final class UnitTransformation<T> implements Transformation<T> {
   @NonNull
   @Override
   public Resource<T> transform(@NonNull Context context, @NonNull Resource<T> resource,
-                               int outWidth, int outHeight) {
+      int outWidth, int outHeight) {
     return resource;
   }
 

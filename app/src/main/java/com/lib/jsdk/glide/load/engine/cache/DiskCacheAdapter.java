@@ -1,6 +1,7 @@
 package com.lib.jsdk.glide.load.engine.cache;
 
 import com.lib.jsdk.glide.load.Key;
+import com.lib.jsdk.glide.load.engine.cache.DiskCache;
 
 import java.io.File;
 

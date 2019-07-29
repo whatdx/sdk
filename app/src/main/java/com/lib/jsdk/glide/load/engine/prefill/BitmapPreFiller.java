@@ -10,7 +10,6 @@ import com.lib.jsdk.glide.load.DecodeFormat;
 import com.lib.jsdk.glide.load.engine.bitmap_recycle.BitmapPool;
 import com.lib.jsdk.glide.load.engine.cache.MemoryCache;
 import com.lib.jsdk.glide.util.Util;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,7 +27,7 @@ public final class BitmapPreFiller {
   private BitmapPreFillRunner current;
 
   public BitmapPreFiller(MemoryCache memoryCache, BitmapPool bitmapPool,
-                         DecodeFormat defaultFormat) {
+      DecodeFormat defaultFormat) {
     this.memoryCache = memoryCache;
     this.bitmapPool = bitmapPool;
     this.defaultFormat = defaultFormat;
@@ -68,7 +67,7 @@ public final class BitmapPreFiller {
 
     final float bytesPerWeight = maxSize / (float) totalWeight;
 
-    Map<PreFillType, Integer> attributeToCount = new HashMap<>();
+    Map<com.lib.jsdk.glide.load.engine.prefill.PreFillType, Integer> attributeToCount = new HashMap<>();
     for (com.lib.jsdk.glide.load.engine.prefill.PreFillType size : preFillSizes) {
       int bytesForSize = Math.round(bytesPerWeight * size.getWeight());
       int bytesPerBitmap = getSizeInBytes(size);

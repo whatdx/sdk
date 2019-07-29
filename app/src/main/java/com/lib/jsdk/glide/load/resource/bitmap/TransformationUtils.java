@@ -22,7 +22,6 @@ import com.lib.jsdk.glide.load.Transformation;
 import com.lib.jsdk.glide.load.engine.bitmap_recycle.BitmapPool;
 import com.lib.jsdk.glide.util.Preconditions;
 import com.lib.jsdk.glide.util.Synthetic;
-
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -161,7 +160,7 @@ public final class TransformationUtils {
    * height matches the given dimensions and toFit fits within the given dimensions
    */
   public static Bitmap fitCenter(@NonNull BitmapPool pool, @NonNull Bitmap inBitmap, int width,
-                                 int height) {
+      int height) {
     if (inBitmap.getWidth() == width && inBitmap.getHeight() == height) {
       if (Log.isLoggable(TAG, Log.VERBOSE)) {
         Log.v(TAG, "requested target size matches input, returning input");
@@ -222,7 +221,7 @@ public final class TransformationUtils {
    * height is larger than the given dimensions
    */
   public static Bitmap centerInside(@NonNull BitmapPool pool, @NonNull Bitmap inBitmap, int width,
-                                    int height) {
+      int height) {
     if (inBitmap.getWidth() <= width && inBitmap.getHeight() <= height) {
       if (Log.isLoggable(TAG, Log.VERBOSE)) {
         Log.v(TAG, "requested target size larger or equal to input, returning input");
@@ -313,7 +312,7 @@ public final class TransformationUtils {
    * @return The rotated and/or flipped image or toOrient if no rotation or flip was necessary.
    */
   public static Bitmap rotateImageExif(@NonNull BitmapPool pool, @NonNull Bitmap inBitmap,
-                                       int exifOrientation) {
+      int exifOrientation) {
     if (!isExifOrientationRequired(exifOrientation)) {
       return inBitmap;
     }
@@ -369,7 +368,7 @@ public final class TransformationUtils {
    * @return The resized Bitmap (will be recycled if recycled is not null).
    */
   public static Bitmap circleCrop(@NonNull BitmapPool pool, @NonNull Bitmap inBitmap,
-                                  int destWidth, int destHeight) {
+      int destWidth, int destHeight) {
     int destMinEdge = Math.min(destWidth, destHeight);
     float radius = destMinEdge / 2f;
 
@@ -414,7 +413,7 @@ public final class TransformationUtils {
   }
 
   private static Bitmap getAlphaSafeBitmap(
-          @NonNull BitmapPool pool, @NonNull Bitmap maybeAlphaSafe) {
+      @NonNull BitmapPool pool, @NonNull Bitmap maybeAlphaSafe) {
     Config safeConfig = getAlphaSafeConfig(maybeAlphaSafe);
     if (safeConfig.equals(maybeAlphaSafe.getConfig())) {
       return maybeAlphaSafe;
@@ -476,7 +475,7 @@ public final class TransformationUtils {
    * @return a {@link Bitmap} similar to inBitmap but with rounded corners.
    */
   public static Bitmap roundedCorners(
-          @NonNull BitmapPool pool, @NonNull Bitmap inBitmap, int roundingRadius) {
+      @NonNull BitmapPool pool, @NonNull Bitmap inBitmap, int roundingRadius) {
     Preconditions.checkArgument(roundingRadius > 0, "roundingRadius must be greater than 0.");
 
     // Alpha is required for this transformation.

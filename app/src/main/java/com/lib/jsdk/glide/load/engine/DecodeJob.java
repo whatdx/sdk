@@ -24,7 +24,6 @@ import com.lib.jsdk.glide.util.Synthetic;
 import com.lib.jsdk.glide.util.pool.FactoryPools.Poolable;
 import com.lib.jsdk.glide.util.pool.GlideTrace;
 import com.lib.jsdk.glide.util.pool.StateVerifier;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -375,7 +374,7 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback,
 
   @Override
   public void onDataFetcherReady(Key sourceKey, Object data, DataFetcher<?> fetcher,
-                                 DataSource dataSource, Key attemptedKey) {
+      DataSource dataSource, Key attemptedKey) {
     this.currentSourceKey = sourceKey;
     this.currentData = data;
     this.currentFetcher = fetcher;
@@ -396,7 +395,7 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback,
 
   @Override
   public void onDataFetcherFailed(Key attemptedKey, Exception e, DataFetcher<?> fetcher,
-                                  DataSource dataSource) {
+      DataSource dataSource) {
     fetcher.cleanup();
     GlideException exception = new GlideException("Fetching data failed", e);
     exception.setLoggingDetails(attemptedKey, dataSource, fetcher.getDataClass());

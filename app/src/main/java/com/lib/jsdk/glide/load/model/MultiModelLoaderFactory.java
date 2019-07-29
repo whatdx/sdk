@@ -9,7 +9,6 @@ import com.lib.jsdk.glide.Registry.NoModelLoaderAvailableException;
 import com.lib.jsdk.glide.load.Options;
 import com.lib.jsdk.glide.util.Preconditions;
 import com.lib.jsdk.glide.util.Synthetic;
-
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -65,21 +64,21 @@ public class MultiModelLoaderFactory {
   }
 
   @NonNull
-  synchronized <Model, Data> List<ModelLoaderFactory<? extends Model, ? extends Data>> replace(
+  synchronized <Model, Data> List<com.lib.jsdk.glide.load.model.ModelLoaderFactory<? extends Model, ? extends Data>> replace(
       @NonNull Class<Model> modelClass,
       @NonNull Class<Data> dataClass,
       @NonNull com.lib.jsdk.glide.load.model.ModelLoaderFactory<? extends Model, ? extends Data> factory) {
-    List<ModelLoaderFactory<? extends Model, ? extends Data>> removed =
+    List<com.lib.jsdk.glide.load.model.ModelLoaderFactory<? extends Model, ? extends Data>> removed =
         remove(modelClass, dataClass);
     append(modelClass, dataClass, factory);
     return removed;
   }
 
   @NonNull
-  synchronized <Model, Data> List<ModelLoaderFactory<? extends Model, ? extends Data>> remove(
+  synchronized <Model, Data> List<com.lib.jsdk.glide.load.model.ModelLoaderFactory<? extends Model, ? extends Data>> remove(
       @NonNull Class<Model> modelClass,
       @NonNull Class<Data> dataClass) {
-    List<ModelLoaderFactory<? extends Model, ? extends Data>> factories = new ArrayList<>();
+    List<com.lib.jsdk.glide.load.model.ModelLoaderFactory<? extends Model, ? extends Data>> factories = new ArrayList<>();
     for (Iterator<Entry<?, ?>> iterator = entries.iterator(); iterator.hasNext(); ) {
       Entry<?, ?> entry = iterator.next();
       if (entry.handles(modelClass, dataClass)) {
@@ -91,9 +90,9 @@ public class MultiModelLoaderFactory {
   }
 
   @NonNull
-  synchronized <Model> List<ModelLoader<Model, ?>> build(@NonNull Class<Model> modelClass) {
+  synchronized <Model> List<com.lib.jsdk.glide.load.model.ModelLoader<Model, ?>> build(@NonNull Class<Model> modelClass) {
     try {
-      List<ModelLoader<Model, ?>> loaders = new ArrayList<>();
+      List<com.lib.jsdk.glide.load.model.ModelLoader<Model, ?>> loaders = new ArrayList<>();
       for (Entry<?, ?> entry : entries) {
         // Avoid stack overflow recursively creating model loaders by only creating loaders in
         // recursive requests if they haven't been created earlier in the chain. For example:
@@ -131,7 +130,7 @@ public class MultiModelLoaderFactory {
   public synchronized <Model, Data> com.lib.jsdk.glide.load.model.ModelLoader<Model, Data> build(@NonNull Class<Model> modelClass,
                                                                                                  @NonNull Class<Data> dataClass) {
     try {
-      List<ModelLoader<Model, Data>> loaders = new ArrayList<>();
+      List<com.lib.jsdk.glide.load.model.ModelLoader<Model, Data>> loaders = new ArrayList<>();
       boolean ignoredAnyEntries = false;
       for (Entry<?, ?> entry : entries) {
         // Avoid stack overflow recursively creating model loaders by only creating loaders in
@@ -189,10 +188,8 @@ public class MultiModelLoaderFactory {
 
   private static class Entry<Model, Data> {
     private final Class<Model> modelClass;
-    @Synthetic
-    final Class<Data> dataClass;
-    @Synthetic
-    final com.lib.jsdk.glide.load.model.ModelLoaderFactory<? extends Model, ? extends Data> factory;
+    @Synthetic final Class<Data> dataClass;
+    @Synthetic final com.lib.jsdk.glide.load.model.ModelLoaderFactory<? extends Model, ? extends Data> factory;
 
     public Entry(
         @NonNull Class<Model> modelClass,
@@ -215,7 +212,7 @@ public class MultiModelLoaderFactory {
   static class Factory {
     @NonNull
     public <Model, Data> MultiModelLoader<Model, Data> build(
-        @NonNull List<ModelLoader<Model, Data>> modelLoaders,
+        @NonNull List<com.lib.jsdk.glide.load.model.ModelLoader<Model, Data>> modelLoaders,
         @NonNull Pools.Pool<List<Throwable>> throwableListPool) {
       return new MultiModelLoader<>(modelLoaders, throwableListPool);
     }
@@ -228,7 +225,7 @@ public class MultiModelLoaderFactory {
     @Nullable
     @Override
     public LoadData<Object> buildLoadData(@NonNull Object o, int width, int height,
-                                          @NonNull Options options) {
+        @NonNull Options options) {
       return null;
     }
 

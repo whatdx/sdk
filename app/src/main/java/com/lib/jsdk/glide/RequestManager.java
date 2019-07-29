@@ -1,5 +1,9 @@
 package com.lib.jsdk.glide;
 
+import static com.lib.jsdk.glide.request.RequestOptions.decodeTypeOf;
+import static com.lib.jsdk.glide.request.RequestOptions.diskCacheStrategyOf;
+import static com.lib.jsdk.glide.request.RequestOptions.skipMemoryCacheOf;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
@@ -34,15 +38,10 @@ import com.lib.jsdk.glide.request.target.ViewTarget;
 import com.lib.jsdk.glide.request.transition.Transition;
 import com.lib.jsdk.glide.util.Synthetic;
 import com.lib.jsdk.glide.util.Util;
-
 import java.io.File;
 import java.net.URL;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
-
-import static com.lib.jsdk.glide.request.RequestOptions.decodeTypeOf;
-import static com.lib.jsdk.glide.request.RequestOptions.diskCacheStrategyOf;
-import static com.lib.jsdk.glide.request.RequestOptions.skipMemoryCacheOf;
 
 /**
  * A class for managing and starting requests for Glide. Can use activity, fragment and connectivity
@@ -57,7 +56,7 @@ import static com.lib.jsdk.glide.request.RequestOptions.skipMemoryCacheOf;
  * @see com.lib.jsdk.glide.Glide#with(Context)
  */
 public class RequestManager implements LifecycleListener,
-        ModelTypes<RequestBuilder<Drawable>> {
+    ModelTypes<RequestBuilder<Drawable>> {
   private static final RequestOptions DECODE_TYPE_BITMAP = decodeTypeOf(Bitmap.class).lock();
 //  private static final RequestOptions DECODE_TYPE_GIF = decodeTypeOf(GifDrawable.class).lock();
   private static final RequestOptions DOWNLOAD_ONLY_OPTIONS =
@@ -67,8 +66,7 @@ public class RequestManager implements LifecycleListener,
   protected final com.lib.jsdk.glide.Glide glide;
   protected final Context context;
   @SuppressWarnings("WeakerAccess")
-  @Synthetic
-  final Lifecycle lifecycle;
+  @Synthetic final Lifecycle lifecycle;
   @GuardedBy("this")
   private final RequestTracker requestTracker;
   @GuardedBy("this")

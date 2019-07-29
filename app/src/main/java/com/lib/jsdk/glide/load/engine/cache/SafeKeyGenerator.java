@@ -10,7 +10,6 @@ import com.lib.jsdk.glide.util.Synthetic;
 import com.lib.jsdk.glide.util.Util;
 import com.lib.jsdk.glide.util.pool.FactoryPools;
 import com.lib.jsdk.glide.util.pool.StateVerifier;
-
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -61,8 +60,7 @@ public class SafeKeyGenerator {
 
   private static final class PoolableDigestContainer implements FactoryPools.Poolable {
 
-    @Synthetic
-    final MessageDigest messageDigest;
+    @Synthetic final MessageDigest messageDigest;
     private final StateVerifier stateVerifier = StateVerifier.newInstance();
 
     PoolableDigestContainer(MessageDigest messageDigest) {

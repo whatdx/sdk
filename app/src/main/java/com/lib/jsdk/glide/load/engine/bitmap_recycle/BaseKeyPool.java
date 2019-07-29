@@ -1,7 +1,6 @@
 package com.lib.jsdk.glide.load.engine.bitmap_recycle;
 
 import com.lib.jsdk.glide.util.Util;
-
 import java.util.Queue;
 
 abstract class BaseKeyPool<T extends com.lib.jsdk.glide.load.engine.bitmap_recycle.Poolable> {

@@ -10,7 +10,6 @@ import androidx.annotation.Nullable;
 
 import com.lib.jsdk.glide.load.model.Model;
 import com.lib.jsdk.glide.request.target.Target;
-
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collection;

@@ -7,7 +7,6 @@ import androidx.annotation.NonNull;
 import com.lib.jsdk.glide.load.Encoder;
 import com.lib.jsdk.glide.load.Options;
 import com.lib.jsdk.glide.load.engine.bitmap_recycle.ArrayPool;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;

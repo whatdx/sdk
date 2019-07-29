@@ -7,11 +7,12 @@ import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
 
 import com.lib.jsdk.glide.load.Key;
+import com.lib.jsdk.glide.load.engine.EngineResource;
 import com.lib.jsdk.glide.load.engine.EngineResource.ResourceListener;
+import com.lib.jsdk.glide.load.engine.Resource;
 import com.lib.jsdk.glide.util.Executors;
 import com.lib.jsdk.glide.util.Preconditions;
 import com.lib.jsdk.glide.util.Synthetic;
-
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
@@ -133,8 +134,7 @@ final class ActiveResources {
   }
 
   @SuppressWarnings("WeakerAccess")
-  @Synthetic
-  void cleanReferenceQueue() {
+  @Synthetic void cleanReferenceQueue() {
     while (!isShutdown) {
       try {
         ResourceWeakReference ref = (ResourceWeakReference) resourceReferenceQueue.remove();
@@ -173,10 +173,8 @@ final class ActiveResources {
 
   @VisibleForTesting
   static final class ResourceWeakReference extends WeakReference<com.lib.jsdk.glide.load.engine.EngineResource<?>> {
-    @SuppressWarnings("WeakerAccess") @Synthetic
-    final Key key;
-    @SuppressWarnings("WeakerAccess") @Synthetic
-    final boolean isCacheable;
+    @SuppressWarnings("WeakerAccess") @Synthetic final Key key;
+    @SuppressWarnings("WeakerAccess") @Synthetic final boolean isCacheable;
 
     @Nullable @SuppressWarnings("WeakerAccess") @Synthetic
     Resource<?> resource;

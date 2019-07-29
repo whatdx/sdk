@@ -12,9 +12,9 @@ import androidx.annotation.VisibleForTesting;
 
 import com.lib.jsdk.glide.Glide;
 import com.lib.jsdk.glide.Priority;
-import com.lib.jsdk.glide.load.DataSource;
 import com.lib.jsdk.glide.load.data.DataFetcher;
 import com.lib.jsdk.glide.load.data.ExifOrientationStream;
+import com.lib.jsdk.glide.load.DataSource;
 import com.lib.jsdk.glide.load.engine.bitmap_recycle.ArrayPool;
 
 import java.io.FileNotFoundException;

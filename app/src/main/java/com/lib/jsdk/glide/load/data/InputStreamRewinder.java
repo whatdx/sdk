@@ -5,7 +5,6 @@ import androidx.annotation.NonNull;
 import com.lib.jsdk.glide.load.engine.bitmap_recycle.ArrayPool;
 import com.lib.jsdk.glide.load.resource.bitmap.RecyclableBufferedInputStream;
 import com.lib.jsdk.glide.util.Synthetic;
-
 import java.io.IOException;
 import java.io.InputStream;
 

@@ -4,6 +4,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 
+import com.lib.jsdk.glide.load.engine.Resource;
 import com.lib.jsdk.glide.util.Synthetic;
 
 /**

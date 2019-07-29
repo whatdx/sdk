@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 
 import com.lib.jsdk.glide.load.ResourceDecoder;
 import com.lib.jsdk.glide.util.Synthetic;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -101,10 +100,8 @@ public class ResourceDecoderRegistry {
 
   private static class Entry<T, R> {
     private final Class<T> dataClass;
-    @Synthetic
-    final Class<R> resourceClass;
-    @Synthetic
-    final ResourceDecoder<T, R> decoder;
+    @Synthetic final Class<R> resourceClass;
+    @Synthetic final ResourceDecoder<T, R> decoder;
 
     public Entry(@NonNull Class<T> dataClass, @NonNull Class<R> resourceClass,
         ResourceDecoder<T, R> decoder) {

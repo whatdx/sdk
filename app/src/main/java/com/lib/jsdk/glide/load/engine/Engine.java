@@ -24,7 +24,6 @@ import com.lib.jsdk.glide.util.LogTime;
 import com.lib.jsdk.glide.util.Preconditions;
 import com.lib.jsdk.glide.util.Synthetic;
 import com.lib.jsdk.glide.util.pool.FactoryPools;
-
 import java.util.Map;
 import java.util.concurrent.Executor;
 

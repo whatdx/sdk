@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.VisibleForTesting;
 
 import com.lib.jsdk.glide.load.engine.bitmap_recycle.ArrayPool;
-
 import java.io.IOException;
 import java.io.OutputStream;
 

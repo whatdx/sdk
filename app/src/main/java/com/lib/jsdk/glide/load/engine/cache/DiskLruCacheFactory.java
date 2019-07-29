@@ -1,5 +1,8 @@
 package com.lib.jsdk.glide.load.engine.cache;
 
+import com.lib.jsdk.glide.load.engine.cache.DiskCache;
+import com.lib.jsdk.glide.load.engine.cache.DiskLruCacheWrapper;
+
 import java.io.File;
 
 /**

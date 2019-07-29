@@ -11,6 +11,7 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
+import com.lib.jsdk.glide.manager.ConnectivityMonitor;
 import com.lib.jsdk.glide.util.Preconditions;
 import com.lib.jsdk.glide.util.Synthetic;
 
@@ -20,11 +21,9 @@ import com.lib.jsdk.glide.util.Synthetic;
 final class DefaultConnectivityMonitor implements ConnectivityMonitor {
   private static final String TAG = "ConnectivityMonitor";
   private final Context context;
-  @SuppressWarnings("WeakerAccess") @Synthetic
-  final ConnectivityListener listener;
+  @SuppressWarnings("WeakerAccess") @Synthetic final ConnectivityListener listener;
 
-  @SuppressWarnings("WeakerAccess") @Synthetic
-  boolean isConnected;
+  @SuppressWarnings("WeakerAccess") @Synthetic boolean isConnected;
   private boolean isRegistered;
 
   private final BroadcastReceiver connectivityReceiver = new BroadcastReceiver() {

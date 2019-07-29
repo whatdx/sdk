@@ -4,7 +4,6 @@ package com.lib.jsdk.glide.manager;
 import androidx.annotation.NonNull;
 
 import com.lib.jsdk.glide.util.Util;
-
 import java.util.Collections;
 import java.util.Set;
 import java.util.WeakHashMap;
@@ -14,8 +13,8 @@ import java.util.WeakHashMap;
  * listeners of {@link android.app.Fragment} and {@link android.app.Activity} lifecycle events.
  */
 class ActivityFragmentLifecycle implements Lifecycle {
-  private final Set<LifecycleListener> lifecycleListeners =
-      Collections.newSetFromMap(new WeakHashMap<LifecycleListener, Boolean>());
+  private final Set<com.lib.jsdk.glide.manager.LifecycleListener> lifecycleListeners =
+      Collections.newSetFromMap(new WeakHashMap<com.lib.jsdk.glide.manager.LifecycleListener, Boolean>());
   private boolean isStarted;
   private boolean isDestroyed;
 

@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 
 import com.lib.jsdk.glide.Glide;
 import com.lib.jsdk.glide.Registry;
+import com.lib.jsdk.glide.load.model.ModelLoader;
 
 /**
  * An interface for creating a {@link com.lib.jsdk.glide.load.model.ModelLoader} for a given model type.

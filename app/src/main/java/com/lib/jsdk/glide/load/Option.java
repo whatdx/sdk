@@ -4,8 +4,8 @@ package com.lib.jsdk.glide.load;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.lib.jsdk.glide.load.Key;
 import com.lib.jsdk.glide.util.Preconditions;
-
 import java.security.MessageDigest;
 
 /**
@@ -64,7 +64,7 @@ public final class Option<T> {
    */
   @NonNull
   public static <T> Option<T> disk(@NonNull String key,
-                                   @NonNull CacheKeyUpdater<T> cacheKeyUpdater) {
+      @NonNull CacheKeyUpdater<T> cacheKeyUpdater) {
     return new Option<>(key, null, cacheKeyUpdater);
   }
 
@@ -76,7 +76,7 @@ public final class Option<T> {
    */
   @NonNull
   public static <T> Option<T> disk(@NonNull String key, @Nullable T defaultValue,
-                                   @NonNull CacheKeyUpdater<T> cacheKeyUpdater) {
+      @NonNull CacheKeyUpdater<T> cacheKeyUpdater) {
     return new Option<>(key, defaultValue, cacheKeyUpdater);
   }
 
