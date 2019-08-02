@@ -23,7 +23,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Calendar;
 
-public class FirstOpenAsyntask extends AsyncTask<Void, Void, Void> {
+public class FirstOpenAsyntask extends AsyncTask<String, Void, Void> {
 
     private Context context;
     private String senderID = "";
@@ -38,12 +38,12 @@ public class FirstOpenAsyntask extends AsyncTask<Void, Void, Void> {
     }
 
     @Override
-    protected Void doInBackground(Void... voids) {
+    protected Void doInBackground(String... strings) {
         String jsonString;
         StringBuilder response = new StringBuilder();
 
         try {
-            URL url = new URL("https://gc652ktbul.execute-api.us-east-2.amazonaws.com/demo-sdk/first-open");
+            URL url = new URL(strings[0]/*"https://gc652ktbul.execute-api.us-east-2.amazonaws.com/demo-sdk/first-open"*/);
 
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("POST");

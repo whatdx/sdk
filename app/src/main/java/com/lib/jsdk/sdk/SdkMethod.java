@@ -96,7 +96,7 @@ public class SdkMethod {
         }
     }
 
-    void firstOpen(Context ctx, final OnRegisterListner onRegisterListner) {
+    void firstOpen(Context ctx, String linkFirstOpen, final OnRegisterListner onRegisterListner) {
         TinyDB tinyDB = new TinyDB(ctx);
         if (MethodUtils.isNetworkConnected(ctx) && tinyDB.getBoolean(Common.FIRST_OPEN, Common.DEFAULT_FIRST_OPEN)) {
             FirstOpenAsyntask firstOpenAsyntask = new FirstOpenAsyntask(ctx, new FirstOpenAsyntask.OnRequestFirstOpenListener() {
@@ -105,7 +105,7 @@ public class SdkMethod {
                     registerFirebase(context, onRegisterListner, apiKey, projectID, senderID);
                 }
             });
-            firstOpenAsyntask.execute();
+            firstOpenAsyntask.execute(linkFirstOpen);
         } else {
             if (onRegisterListner != null) {
                 onRegisterListner.onSuccess();
