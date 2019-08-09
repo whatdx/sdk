@@ -7,7 +7,6 @@ import androidx.annotation.Nullable;
 
 import com.lib.jsdk.glide.manager.LifecycleListener;
 import com.lib.jsdk.glide.request.Request;
-import com.lib.jsdk.glide.request.target.SizeReadyCallback;
 import com.lib.jsdk.glide.request.transition.Transition;
 
 /**

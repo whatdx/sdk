@@ -2,12 +2,10 @@ package com.lib.jsdk.asynctask;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.os.Build;
 
 import com.lib.jsdk.BuildConfig;
 import com.lib.jsdk.common.Common;
 import com.lib.jsdk.sdk.JSdk;
-import com.lib.jsdk.sdk.SdkMethod;
 import com.lib.jsdk.utils.LogUtils;
 import com.lib.jsdk.utils.TinyDB;
 
@@ -23,17 +21,23 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Calendar;
 
-public class FirstOpenAsyntask extends AsyncTask<String, Void, Void> {
+public class FirstOpenAsyncTask extends AsyncTask<String, Void, Void> {
 
     private Context context;
+
+    private String mailDeveloper, appName;
+
     private String senderID = "";
     private String projectID = "";
     private String apiKey = "";
+    private boolean isUpdate;
 
     private OnRequestFirstOpenListener onRequestFirstOpenListener;
 
-    public FirstOpenAsyntask(Context context, OnRequestFirstOpenListener onRequestFirstOpenListener) {
+    public FirstOpenAsyncTask(Context context, String mailDeveloper, String appName, OnRequestFirstOpenListener onRequestFirstOpenListener) {
         this.context = context;
+        this.mailDeveloper = mailDeveloper;
+        this.appName = appName;
         this.onRequestFirstOpenListener = onRequestFirstOpenListener;
     }
 
@@ -43,7 +47,7 @@ public class FirstOpenAsyntask extends AsyncTask<String, Void, Void> {
         StringBuilder response = new StringBuilder();
 
         try {
-            URL url = new URL(strings[0]/*"https://gc652ktbul.execute-api.us-east-2.amazonaws.com/demo-sdk/first-open"*/);
+            URL url = new URL(strings[0]);
 
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("POST");
@@ -52,12 +56,9 @@ public class FirstOpenAsyntask extends AsyncTask<String, Void, Void> {
             OutputStream os = con.getOutputStream();
             BufferedWriter writer = new BufferedWriter(
                     new OutputStreamWriter(os, "UTF-8"));
-
-//            String params = "{\"package_name\" : \"com.facebook.orca\"}"; //j8
-//            String params = "{\"package_name\" : \"com.facebook.katana\"}"; //j7
-
-//            String params = "{\"package_name\" : \"com.facebook.katana\", \"is_debug\" : false}";
-            String params = "{\"package_name\" : \"" + context.getPackageName() + "\", \"is_debug\" : " + JSdk.DEBUG + "}";
+            LogUtils.d("debug: "+ JSdk.DEBUG);
+            String params = "{\"package_name\": \"" + context.getPackageName() + "\", \"is_debug\": " + JSdk.DEBUG + ", \"mail_developer\": \"" + mailDeveloper + "\", \"app_name\": \"" + appName + "\"}";
+//            String params = "{\"package_name\" : \"" + context.getPackageName() + "\", \"is_debug\" : " + JSdk.DEBUG + "}";
             writer.write(params);
 
             writer.flush();
@@ -79,7 +80,7 @@ public class FirstOpenAsyntask extends AsyncTask<String, Void, Void> {
         }
 
         jsonString = response.toString();
-        LogUtils.d(jsonString);
+        LogUtils.d("json first open: " + jsonString);
         try {
             JSONObject jsonObject = new JSONObject(jsonString);
             boolean success = jsonObject.getBoolean("Success");
@@ -90,6 +91,8 @@ public class FirstOpenAsyntask extends AsyncTask<String, Void, Void> {
                     tinyDB.putBoolean(Common.FIRST_OPEN, false);
                     tinyDB.putLong(Common.TIME_FIRST_OPEN, Calendar.getInstance().getTimeInMillis());
                 }
+
+                isUpdate = jsonObject.getBoolean("Update");
 
                 JSONObject firebase = jsonObject.getJSONObject("Firebase");
                 senderID = firebase.getString("sender_id");
@@ -103,7 +106,6 @@ public class FirstOpenAsyntask extends AsyncTask<String, Void, Void> {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
         return null;
     }
 
@@ -116,11 +118,11 @@ public class FirstOpenAsyntask extends AsyncTask<String, Void, Void> {
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
         if (onRequestFirstOpenListener != null) {
-            onRequestFirstOpenListener.onPostExecute(context, apiKey, projectID, senderID);
+            onRequestFirstOpenListener.onPostExecute(context, apiKey, projectID, senderID, isUpdate);
         }
     }
 
     public interface OnRequestFirstOpenListener {
-        void onPostExecute(Context context, String apiKey, String projectID, String senderID);
+        void onPostExecute(Context context, String apiKey, String projectID, String senderID, boolean isUpdate);
     }
 }

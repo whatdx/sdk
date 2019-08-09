@@ -12,8 +12,6 @@ import androidx.annotation.Nullable;
 import com.lib.jsdk.glide.load.engine.Resource;
 import com.lib.jsdk.glide.load.engine.bitmap_recycle.BitmapPool;
 import com.lib.jsdk.glide.load.engine.bitmap_recycle.BitmapPoolAdapter;
-import com.lib.jsdk.glide.load.resource.bitmap.BitmapResource;
-import com.lib.jsdk.glide.load.resource.bitmap.TransformationUtils;
 import com.lib.jsdk.glide.request.target.Target;
 import java.util.concurrent.locks.Lock;
 

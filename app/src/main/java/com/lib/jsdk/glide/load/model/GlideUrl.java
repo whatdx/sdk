@@ -7,7 +7,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.lib.jsdk.glide.load.Key;
-import com.lib.jsdk.glide.load.model.Headers;
 import com.lib.jsdk.glide.util.Preconditions;
 import java.net.MalformedURLException;
 import java.net.URL;

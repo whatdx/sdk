@@ -18,7 +18,6 @@ import androidx.annotation.VisibleForTesting;
 
 import com.lib.jsdk.R;
 import com.lib.jsdk.glide.request.Request;
-import com.lib.jsdk.glide.request.transition.Transition;
 import com.lib.jsdk.glide.util.Preconditions;
 import com.lib.jsdk.glide.util.Synthetic;
 import java.lang.ref.WeakReference;

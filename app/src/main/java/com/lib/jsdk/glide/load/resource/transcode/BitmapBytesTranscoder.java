@@ -8,7 +8,6 @@ import androidx.annotation.Nullable;
 import com.lib.jsdk.glide.load.Options;
 import com.lib.jsdk.glide.load.engine.Resource;
 import com.lib.jsdk.glide.load.resource.bytes.BytesResource;
-import com.lib.jsdk.glide.load.resource.transcode.ResourceTranscoder;
 
 import java.io.ByteArrayOutputStream;
 

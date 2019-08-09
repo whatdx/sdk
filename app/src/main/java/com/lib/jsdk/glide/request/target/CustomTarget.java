@@ -9,10 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.lib.jsdk.glide.request.Request;
-import com.lib.jsdk.glide.request.target.ImageViewTarget;
-import com.lib.jsdk.glide.request.target.SizeReadyCallback;
-import com.lib.jsdk.glide.request.target.Target;
-import com.lib.jsdk.glide.request.transition.Transition;
 import com.lib.jsdk.glide.util.Util;
 
 /**

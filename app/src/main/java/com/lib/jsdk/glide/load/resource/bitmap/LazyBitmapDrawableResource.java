@@ -12,7 +12,6 @@ import com.lib.jsdk.glide.Glide;
 import com.lib.jsdk.glide.load.engine.Initializable;
 import com.lib.jsdk.glide.load.engine.Resource;
 import com.lib.jsdk.glide.load.engine.bitmap_recycle.BitmapPool;
-import com.lib.jsdk.glide.load.resource.bitmap.BitmapResource;
 import com.lib.jsdk.glide.util.Preconditions;
 
 /**

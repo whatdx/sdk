@@ -5,7 +5,6 @@ import androidx.annotation.Nullable;
 
 import com.lib.jsdk.glide.load.Options;
 import com.lib.jsdk.glide.load.engine.Resource;
-import com.lib.jsdk.glide.load.resource.transcode.ResourceTranscoder;
 
 /**
  * A simple {@link ResourceTranscoder} that simply returns the given resource.

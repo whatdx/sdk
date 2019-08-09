@@ -6,7 +6,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.lib.jsdk.glide.load.engine.Resource;
-import com.lib.jsdk.glide.load.resource.drawable.DrawableResource;
 
 /**
  * Handles generic {@link Drawable} types where we may be uncertain of their size or type and

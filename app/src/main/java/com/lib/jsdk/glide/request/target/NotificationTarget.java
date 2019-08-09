@@ -10,7 +10,6 @@ import android.widget.RemoteViews;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.lib.jsdk.glide.request.target.SimpleTarget;
 import com.lib.jsdk.glide.request.transition.Transition;
 import com.lib.jsdk.glide.util.Preconditions;
 

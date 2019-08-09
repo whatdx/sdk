@@ -1,7 +1,5 @@
 package com.lib.jsdk.glide.module;
 
-import com.lib.jsdk.glide.Registry;
-
 /**
  * An interface allowing lazy configuration of Glide including setting options using
  * {@link com.lib.jsdk.glide.GlideBuilder} and registering

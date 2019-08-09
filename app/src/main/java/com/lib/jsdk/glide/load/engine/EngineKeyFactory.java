@@ -3,7 +3,6 @@ package com.lib.jsdk.glide.load.engine;
 import com.lib.jsdk.glide.load.Key;
 import com.lib.jsdk.glide.load.Options;
 import com.lib.jsdk.glide.load.Transformation;
-import com.lib.jsdk.glide.load.engine.EngineKey;
 
 import java.util.Map;
 

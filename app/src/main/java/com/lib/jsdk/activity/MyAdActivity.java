@@ -13,8 +13,6 @@ import com.lib.jsdk.common.Common;
 import com.lib.jsdk.glide.Glide;
 import com.lib.jsdk.utils.MethodUtils;
 
-import org.w3c.dom.Text;
-
 public class MyAdActivity extends AppCompatActivity {
 
     private ImageView imgAd;

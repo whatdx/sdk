@@ -9,8 +9,6 @@ import com.lib.jsdk.glide.Priority;
 import com.lib.jsdk.glide.load.DataSource;
 import com.lib.jsdk.glide.load.Options;
 import com.lib.jsdk.glide.load.data.DataFetcher;
-import com.lib.jsdk.glide.load.model.ModelLoader;
-import com.lib.jsdk.glide.load.model.ModelLoaderFactory;
 import com.lib.jsdk.glide.signature.ObjectKey;
 import java.io.File;
 import java.io.FileInputStream;

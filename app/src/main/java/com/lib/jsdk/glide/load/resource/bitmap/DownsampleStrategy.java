@@ -1,7 +1,6 @@
 package com.lib.jsdk.glide.load.resource.bitmap;
 
 import com.lib.jsdk.glide.load.Option;
-import com.lib.jsdk.glide.load.resource.bitmap.Downsampler;
 import com.lib.jsdk.glide.util.Synthetic;
 
 /**

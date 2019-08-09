@@ -5,8 +5,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
 
-import com.lib.jsdk.glide.load.model.ModelLoader;
-import com.lib.jsdk.glide.load.model.ModelLoaderFactory;
 import com.lib.jsdk.glide.util.LruCache;
 import com.lib.jsdk.glide.util.Util;
 import java.util.Queue;

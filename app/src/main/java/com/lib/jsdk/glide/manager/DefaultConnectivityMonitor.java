@@ -11,7 +11,6 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import com.lib.jsdk.glide.manager.ConnectivityMonitor;
 import com.lib.jsdk.glide.util.Preconditions;
 import com.lib.jsdk.glide.util.Synthetic;
 

@@ -9,8 +9,6 @@ import com.lib.jsdk.glide.load.ResourceDecoder;
 import com.lib.jsdk.glide.load.engine.Resource;
 import com.lib.jsdk.glide.load.engine.bitmap_recycle.ArrayPool;
 import com.lib.jsdk.glide.load.engine.bitmap_recycle.BitmapPool;
-import com.lib.jsdk.glide.load.resource.bitmap.Downsampler;
-import com.lib.jsdk.glide.load.resource.bitmap.RecyclableBufferedInputStream;
 import com.lib.jsdk.glide.util.ExceptionCatchingInputStream;
 import com.lib.jsdk.glide.util.MarkEnforcingInputStream;
 import java.io.IOException;

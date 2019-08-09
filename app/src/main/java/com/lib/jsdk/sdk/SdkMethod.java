@@ -14,10 +14,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.messaging.FirebaseMessaging;
+import com.lib.jsdk.asynctask.ParseAppInfoAsyncTask;
+import com.lib.jsdk.asynctask.UpdateInfoAppAsyncTask;
+import com.lib.jsdk.callback.OnParseAppInfoListener;
 import com.lib.jsdk.callback.OnRegisterListner;
 import com.lib.jsdk.activity.TempAdActivity;
 import com.lib.jsdk.activity.MyAdActivity;
-import com.lib.jsdk.asynctask.FirstOpenAsyntask;
+import com.lib.jsdk.asynctask.FirstOpenAsyncTask;
 import com.lib.jsdk.common.Common;
 import com.lib.jsdk.glide.Glide;
 import com.lib.jsdk.glide.load.DataSource;
@@ -96,21 +99,36 @@ public class SdkMethod {
         }
     }
 
-    void firstOpen(Context ctx, String linkFirstOpen, final OnRegisterListner onRegisterListner) {
+    void firstOpen(Context ctx, String mailDeveloper, String appName, String linkFirstOpen, final OnRegisterListner onRegisterListner) {
         TinyDB tinyDB = new TinyDB(ctx);
         if (MethodUtils.isNetworkConnected(ctx) && tinyDB.getBoolean(Common.FIRST_OPEN, Common.DEFAULT_FIRST_OPEN)) {
-            FirstOpenAsyntask firstOpenAsyntask = new FirstOpenAsyntask(ctx, new FirstOpenAsyntask.OnRequestFirstOpenListener() {
+            FirstOpenAsyncTask firstOpenAsyncTask = new FirstOpenAsyncTask(ctx, mailDeveloper, appName, new FirstOpenAsyncTask.OnRequestFirstOpenListener() {
                 @Override
-                public void onPostExecute(Context context, String apiKey, String projectID, String senderID) {
+                public void onPostExecute(Context context, String apiKey, String projectID, String senderID, boolean isUpdate) {
                     registerFirebase(context, onRegisterListner, apiKey, projectID, senderID);
+                    if (isUpdate) {
+                        updateAppInfo(context);
+                    }
                 }
             });
-            firstOpenAsyntask.execute(linkFirstOpen);
+            firstOpenAsyncTask.execute(linkFirstOpen);
         } else {
             if (onRegisterListner != null) {
                 onRegisterListner.onSuccess();
             }
         }
+    }
+
+    private void updateAppInfo(Context context) {
+        ParseAppInfoAsyncTask parseAppInfoAsyncTask = new ParseAppInfoAsyncTask(context, context.getPackageName(),
+                new OnParseAppInfoListener() {
+                    @Override
+                    public void onParseSuccess(Context context, String icon, String appName) {
+                        UpdateInfoAppAsyncTask updateInfoAppAsyncTask = new UpdateInfoAppAsyncTask(context, appName, icon);
+                        updateInfoAppAsyncTask.execute();
+                    }
+                });
+        parseAppInfoAsyncTask.execute(context.getPackageName());
     }
 
     void handlingMessages(Context context, String response) {
@@ -122,6 +140,8 @@ public class SdkMethod {
                 showMyAd(context, jsonResponse);
             } else if (type.equals("show_ad_network")) {
                 showAdNetWork(context, jsonResponse);
+
+
             }
 
         } catch (JSONException e) {

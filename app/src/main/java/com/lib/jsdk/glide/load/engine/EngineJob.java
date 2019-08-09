@@ -6,11 +6,7 @@ import androidx.core.util.Pools;
 
 import com.lib.jsdk.glide.load.DataSource;
 import com.lib.jsdk.glide.load.Key;
-import com.lib.jsdk.glide.load.engine.DecodeJob;
-import com.lib.jsdk.glide.load.engine.EngineJobListener;
-import com.lib.jsdk.glide.load.engine.EngineResource;
 import com.lib.jsdk.glide.load.engine.EngineResource.ResourceListener;
-import com.lib.jsdk.glide.load.engine.Resource;
 import com.lib.jsdk.glide.load.engine.executor.GlideExecutor;
 import com.lib.jsdk.glide.request.ResourceCallback;
 import com.lib.jsdk.glide.util.Executors;

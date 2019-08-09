@@ -18,7 +18,6 @@ import com.lib.jsdk.glide.load.Options;
 import com.lib.jsdk.glide.load.ResourceDecoder;
 import com.lib.jsdk.glide.load.engine.Resource;
 import com.lib.jsdk.glide.load.engine.bitmap_recycle.BitmapPool;
-import com.lib.jsdk.glide.load.resource.bitmap.BitmapResource;
 import com.lib.jsdk.glide.request.target.Target;
 import java.io.IOException;
 import java.nio.ByteBuffer;

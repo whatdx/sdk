@@ -8,9 +8,6 @@ import androidx.annotation.VisibleForTesting;
 
 import com.lib.jsdk.glide.load.DataSource;
 import com.lib.jsdk.glide.load.engine.GlideException;
-import com.lib.jsdk.glide.request.FutureTarget;
-import com.lib.jsdk.glide.request.Request;
-import com.lib.jsdk.glide.request.RequestListener;
 import com.lib.jsdk.glide.request.target.SizeReadyCallback;
 import com.lib.jsdk.glide.request.target.Target;
 import com.lib.jsdk.glide.request.transition.Transition;

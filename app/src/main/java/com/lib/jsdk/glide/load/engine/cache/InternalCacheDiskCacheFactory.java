@@ -2,9 +2,6 @@ package com.lib.jsdk.glide.load.engine.cache;
 
 import android.content.Context;
 
-import com.lib.jsdk.glide.load.engine.cache.DiskCache;
-import com.lib.jsdk.glide.load.engine.cache.DiskLruCacheFactory;
-
 import java.io.File;
 
 /**

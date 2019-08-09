@@ -3,21 +3,20 @@ package com.lib.jsdk.asynctask;
 import android.content.Context;
 import android.os.AsyncTask;
 
-import com.lib.jsdk.BuildConfig;
 import com.lib.jsdk.common.Common;
 import com.lib.jsdk.sdk.JSdk;
 import com.lib.jsdk.utils.TinyDB;
 
 import java.util.Calendar;
 
-public class CheckTimeAsyntask extends AsyncTask<Void, Void, Boolean> {
+public class CheckTimeAsyncTask extends AsyncTask<Void, Void, Boolean> {
 
     private Context context;
     private String response;
     private TinyDB tinyDB;
     private OnCheckTimeListener listener;
 
-    public CheckTimeAsyntask(Context context, String response, OnCheckTimeListener listener) {
+    public CheckTimeAsyncTask(Context context, String response, OnCheckTimeListener listener) {
         this.context = context;
         this.response = response;
         this.listener = listener;

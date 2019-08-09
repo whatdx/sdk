@@ -17,9 +17,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RawRes;
 
-import com.lib.jsdk.glide.Glide;
-import com.lib.jsdk.glide.Priority;
-import com.lib.jsdk.glide.RequestManager;
 import com.lib.jsdk.glide.load.Transformation;
 import com.lib.jsdk.glide.load.engine.DiskCacheStrategy;
 import com.lib.jsdk.glide.request.BaseRequestOptions;

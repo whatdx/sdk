@@ -3,9 +3,6 @@ package com.lib.jsdk.glide.request;
 
 import androidx.annotation.Nullable;
 
-import com.lib.jsdk.glide.request.Request;
-import com.lib.jsdk.glide.request.RequestCoordinator;
-
 /**
  * Runs a single primary {@link com.lib.jsdk.glide.request.Request} until it completes and then a fallback error request only
  * if the single primary request fails.

@@ -1,7 +1,5 @@
 package com.lib.jsdk.glide.load.model;
 
-import com.lib.jsdk.glide.load.model.LazyHeaders;
-
 import java.util.Collections;
 import java.util.Map;
 

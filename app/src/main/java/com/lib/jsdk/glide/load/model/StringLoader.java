@@ -9,8 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.lib.jsdk.glide.load.Options;
-import com.lib.jsdk.glide.load.model.ModelLoader;
-import com.lib.jsdk.glide.load.model.ModelLoaderFactory;
 
 import java.io.File;
 import java.io.InputStream;

@@ -3,7 +3,6 @@ package com.lib.jsdk.glide.manager;
 
 import androidx.annotation.NonNull;
 
-import com.lib.jsdk.glide.manager.LifecycleListener;
 import com.lib.jsdk.glide.request.target.Target;
 import com.lib.jsdk.glide.util.Util;
 import java.util.Collections;

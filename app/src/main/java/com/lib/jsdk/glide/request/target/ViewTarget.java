@@ -17,9 +17,6 @@ import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
 
 import com.lib.jsdk.glide.request.Request;
-import com.lib.jsdk.glide.request.target.BaseTarget;
-import com.lib.jsdk.glide.request.target.SizeReadyCallback;
-import com.lib.jsdk.glide.request.target.Target;
 import com.lib.jsdk.glide.util.Preconditions;
 import com.lib.jsdk.glide.util.Synthetic;
 import java.lang.ref.WeakReference;

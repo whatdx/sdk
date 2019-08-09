@@ -5,8 +5,6 @@ import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 
-import com.lib.jsdk.glide.request.target.ImageViewTarget;
-
 /**
  * A target for display {@link Drawable} objects in {@link ImageView}s.
  */

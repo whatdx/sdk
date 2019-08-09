@@ -5,8 +5,6 @@ import android.graphics.Bitmap;
 import androidx.annotation.NonNull;
 
 import com.lib.jsdk.glide.load.engine.bitmap_recycle.BitmapPool;
-import com.lib.jsdk.glide.load.resource.bitmap.BitmapTransformation;
-import com.lib.jsdk.glide.load.resource.bitmap.TransformationUtils;
 import com.lib.jsdk.glide.util.Util;
 import java.nio.ByteBuffer;
 import java.security.MessageDigest;

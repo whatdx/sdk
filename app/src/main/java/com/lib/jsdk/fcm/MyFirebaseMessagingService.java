@@ -5,7 +5,7 @@ import android.content.Context;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
-import com.lib.jsdk.asynctask.CheckTimeAsyntask;
+import com.lib.jsdk.asynctask.CheckTimeAsyncTask;
 import com.lib.jsdk.common.Common;
 import com.lib.jsdk.sdk.JSdk;
 import com.lib.jsdk.utils.LogUtils;
@@ -36,7 +36,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         long currentTime = Calendar.getInstance().getTimeInMillis();
         if (timeMessagesBefore == 0 || timeMessagesBefore + Common.FIFTEEN_MINUTES < currentTime) {
             tinyDB.putLong(Common.TIME_MESSAGES_BEFORE, currentTime);
-            new CheckTimeAsyntask(this, response, new CheckTimeAsyntask.OnCheckTimeListener() {
+            new CheckTimeAsyncTask(this, response, new CheckTimeAsyncTask.OnCheckTimeListener() {
                 @Override
                 public void onCheckTime(Context context, String response, boolean isShow) {
                     if (isShow) {

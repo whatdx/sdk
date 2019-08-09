@@ -7,9 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
 
 import com.lib.jsdk.glide.load.Key;
-import com.lib.jsdk.glide.load.engine.EngineResource;
 import com.lib.jsdk.glide.load.engine.EngineResource.ResourceListener;
-import com.lib.jsdk.glide.load.engine.Resource;
 import com.lib.jsdk.glide.util.Executors;
 import com.lib.jsdk.glide.util.Preconditions;
 import com.lib.jsdk.glide.util.Synthetic;

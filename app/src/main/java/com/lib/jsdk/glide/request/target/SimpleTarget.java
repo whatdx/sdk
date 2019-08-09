@@ -5,10 +5,6 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import com.lib.jsdk.glide.request.target.BaseTarget;
-import com.lib.jsdk.glide.request.target.SizeReadyCallback;
-import com.lib.jsdk.glide.request.target.Target;
-import com.lib.jsdk.glide.request.target.ViewTarget;
 import com.lib.jsdk.glide.util.Util;
 
 /**

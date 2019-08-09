@@ -5,7 +5,6 @@ import android.widget.AbsListView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.lib.jsdk.glide.RequestManager;
 import com.lib.jsdk.glide.request.target.BaseTarget;
 import com.lib.jsdk.glide.request.target.SizeReadyCallback;
 import com.lib.jsdk.glide.request.transition.Transition;
