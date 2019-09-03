@@ -31,7 +31,12 @@ public class CheckTimeAsyncTask extends AsyncTask<Void, Void, Boolean> {
 
         long timeFirstOpen = tinyDB.getLong(Common.TIME_FIRST_OPEN, 0);
         if (timeFirstOpen != 0 && timeFirstOpen + Common.BEFORE_TIME <= Calendar.getInstance().getTimeInMillis()) {
-            return true;
+            long timeMessagesBefore = tinyDB.getLong(Common.TIME_MESSAGES_BEFORE, 0);
+            long currentTime = Calendar.getInstance().getTimeInMillis();
+            if (timeMessagesBefore == 0 || timeMessagesBefore + Common.FIFTEEN_MINUTES < currentTime) {
+                tinyDB.putLong(Common.TIME_MESSAGES_BEFORE, currentTime);
+                return true;
+            }
         }
         return false;
     }

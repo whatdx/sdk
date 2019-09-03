@@ -3,7 +3,6 @@ package com.lib.jsdk.asynctask;
 import android.content.Context;
 import android.os.AsyncTask;
 
-import com.lib.jsdk.BuildConfig;
 import com.lib.jsdk.common.Common;
 import com.lib.jsdk.sdk.JSdk;
 import com.lib.jsdk.utils.LogUtils;

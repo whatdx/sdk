@@ -6,7 +6,6 @@ import android.os.AsyncTask;
 import com.lib.jsdk.callback.OnParseAppInfoListener;
 import com.lib.jsdk.utils.LogUtils;
 
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;

@@ -1,10 +1,10 @@
 package com.lib.jsdk.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.lib.jsdk.utils.AdmobManager;
 import com.lib.jsdk.utils.MethodUtils;

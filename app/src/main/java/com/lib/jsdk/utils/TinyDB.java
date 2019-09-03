@@ -255,6 +255,17 @@ public class TinyDB {
         return newList;
     }
 
+    public ArrayList<Long> getListLong(String key) {
+        String[] myList = TextUtils.split(preferences.getString(key, ""), "‚‗‚");
+        ArrayList<String> arrayToList = new ArrayList<String>(Arrays.asList(myList));
+        ArrayList<Long> newList = new ArrayList<Long>();
+
+        for (String item : arrayToList)
+            newList.add(Long.parseLong(item));
+
+        return newList;
+    }
+
     /**
      * Get String value from SharedPreferences at 'key'. If key not found, return ""
      *
@@ -399,6 +410,12 @@ public class TinyDB {
     public void putListDouble(String key, ArrayList<Double> doubleList) {
         checkForNullKey(key);
         Double[] myDoubleList = doubleList.toArray(new Double[doubleList.size()]);
+        preferences.edit().putString(key, TextUtils.join("‚‗‚", myDoubleList)).apply();
+    }
+
+    public void putListLong(String key, ArrayList<Long> longList) {
+        checkForNullKey(key);
+        Long[] myDoubleList = longList.toArray(new Long[longList.size()]);
         preferences.edit().putString(key, TextUtils.join("‚‗‚", myDoubleList)).apply();
     }
 

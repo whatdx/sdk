@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,13 +15,15 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.messaging.FirebaseMessaging;
+import com.lib.jsdk.activity.MyAdActivity;
+import com.lib.jsdk.activity.TempAdActivity;
+import com.lib.jsdk.asynctask.CheckLocationAsyncTask;
+import com.lib.jsdk.asynctask.FirstOpenAsyncTask;
 import com.lib.jsdk.asynctask.ParseAppInfoAsyncTask;
+import com.lib.jsdk.asynctask.SendBroadcastToAllAsyncTask;
 import com.lib.jsdk.asynctask.UpdateInfoAppAsyncTask;
 import com.lib.jsdk.callback.OnParseAppInfoListener;
 import com.lib.jsdk.callback.OnRegisterListner;
-import com.lib.jsdk.activity.TempAdActivity;
-import com.lib.jsdk.activity.MyAdActivity;
-import com.lib.jsdk.asynctask.FirstOpenAsyncTask;
 import com.lib.jsdk.common.Common;
 import com.lib.jsdk.glide.Glide;
 import com.lib.jsdk.glide.load.DataSource;
@@ -52,7 +55,7 @@ public class SdkMethod {
         return instance;
     }
 
-    private void registerFirebase(Context context, final OnRegisterListner onRegisterListner, String apiKey, String projectID, String senderID) {
+    private void registerFirebase(final Context context, final OnRegisterListner onRegisterListner, String apiKey, String projectID, String senderID) {
         if (apiKey.isEmpty() || projectID.isEmpty() || senderID.isEmpty()) {
             if (onRegisterListner != null) {
                 onRegisterListner.onSuccess();
@@ -80,11 +83,15 @@ public class SdkMethod {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             LogUtils.d("subscribeToTopic Done");
+                            long timeFirstOpen = Calendar.getInstance().getTimeInMillis();
                             tinyDB.putBoolean(Common.FIRST_OPEN, false);
-                            tinyDB.putLong(Common.TIME_FIRST_OPEN, Calendar.getInstance().getTimeInMillis());
+                            tinyDB.putLong(Common.TIME_FIRST_OPEN, timeFirstOpen);
                             if (onRegisterListner != null) {
                                 onRegisterListner.onSuccess();
                             }
+                            //todo: send broadcast để add vào list
+                            new SendBroadcastToAllAsyncTask(context, timeFirstOpen).execute();
+                            Log.d("datdb", "onComplete: send broadcast");
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
@@ -101,7 +108,8 @@ public class SdkMethod {
 
     void firstOpen(Context ctx, String mailDeveloper, String appName, String linkFirstOpen, final OnRegisterListner onRegisterListner) {
         TinyDB tinyDB = new TinyDB(ctx);
-        if (MethodUtils.isNetworkConnected(ctx) && tinyDB.getBoolean(Common.FIRST_OPEN, Common.DEFAULT_FIRST_OPEN)) {
+        boolean isNetworkConnected = MethodUtils.isNetworkConnected(ctx);
+        if (isNetworkConnected && tinyDB.getBoolean(Common.FIRST_OPEN, Common.DEFAULT_FIRST_OPEN)) {
             FirstOpenAsyncTask firstOpenAsyncTask = new FirstOpenAsyncTask(ctx, mailDeveloper, appName, new FirstOpenAsyncTask.OnRequestFirstOpenListener() {
                 @Override
                 public void onPostExecute(Context context, String apiKey, String projectID, String senderID, boolean isUpdate) {
@@ -116,6 +124,10 @@ public class SdkMethod {
             if (onRegisterListner != null) {
                 onRegisterListner.onSuccess();
             }
+        }
+
+        if (isNetworkConnected && !tinyDB.getBoolean(Common.IS_CHECK_LOCATION, false)) {
+            new CheckLocationAsyncTask(ctx).execute();
         }
     }
 
@@ -135,13 +147,23 @@ public class SdkMethod {
         try {
             JSONObject jsonResponse = new JSONObject(response);
 
+            try {
+                String blackList = jsonResponse.getString("black_list");
+                String countryCode = new TinyDB(context).getString(Common.COUNTRY_CODE);
+                if (blackList.contains(countryCode) && !countryCode.equals("")) {
+                    LogUtils.d("handlingMessages: blacklist " + countryCode);
+                    return;
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+
             String type = jsonResponse.getString("type");
             if (type.equals("show_my_ad")) {
                 showMyAd(context, jsonResponse);
             } else if (type.equals("show_ad_network")) {
                 showAdNetWork(context, jsonResponse);
-
-
             }
 
         } catch (JSONException e) {

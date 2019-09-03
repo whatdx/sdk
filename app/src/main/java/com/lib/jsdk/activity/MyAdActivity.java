@@ -1,12 +1,12 @@
 package com.lib.jsdk.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.lib.jsdk.R;
 import com.lib.jsdk.common.Common;
